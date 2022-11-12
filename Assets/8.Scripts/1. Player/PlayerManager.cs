@@ -17,6 +17,8 @@ public class PlayerManager : MonoBehaviour
     {
         lives = 9;
         coins = 0;
+        shielded = false;
+        mageArmor= 0;
     }
 
     // Update is called once per frame
