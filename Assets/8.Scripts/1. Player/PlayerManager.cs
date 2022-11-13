@@ -13,6 +13,7 @@ public class PlayerManager : MonoBehaviour
     public int mageArmor;
     public bool shielded;
     public bool playerDead = false;
+    public Vector3 playerPosition;
     void Start()
     {
         lives = 9;
