@@ -13,10 +13,13 @@ public class PlayerManager : MonoBehaviour
     public int mageArmor;
     public bool shielded;
     public bool playerDead = false;
+    public Vector3 playerPosition;
     void Start()
     {
         lives = 9;
         coins = 0;
+        shielded = false;
+        mageArmor= 0;
     }
 
     // Update is called once per frame
