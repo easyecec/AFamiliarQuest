@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 // Enemy states
-public enum AI_State
+public enum AI_State_M
 {
     IDLE, CHARGING, ATTACKING 
 }
@@ -16,7 +16,7 @@ public class AI_Mushroom : MonoBehaviour
 
     //AI_States variables
 
-    [SerializeField] private AI_State currentAIState; //Saves the current enum value (current state)
+    [SerializeField] private AI_State_M currentAIState; //Saves the current enum value (current state)
 
     [SerializeField] private float cooldownTime = 2f; //Time between each attack
 
@@ -42,18 +42,18 @@ public class AI_Mushroom : MonoBehaviour
         //Create Switch to determine AI state
         switch (currentAIState)
         {
-            case AI_State.IDLE:
+            case AI_State_M.IDLE:
 
                 if (canSeePlayer == true)
                 {
-                    currentAIState = AI_State.CHARGING;
+                    currentAIState = AI_State_M.CHARGING;
                     cooldownCounter = cooldownTime;
                     Debug.Log("Charging");
                 }
 
                 break;
 
-            case AI_State.CHARGING:
+            case AI_State_M.CHARGING:
 
                 if (cooldownCounter > 0)
                 {
@@ -64,12 +64,12 @@ public class AI_Mushroom : MonoBehaviour
 
                 else 
                 {
-                    currentAIState = AI_State.ATTACKING;
+                    currentAIState = AI_State_M.ATTACKING;
                 }
 
                 break;
 
-            case AI_State.ATTACKING:
+            case AI_State_M.ATTACKING:
 
                 if (canSeePlayer == true)
                 {
@@ -91,7 +91,7 @@ public class AI_Mushroom : MonoBehaviour
                             
                             cooldownCounter = cooldownTime;
 
-                            currentAIState = AI_State.CHARGING;
+                            currentAIState = AI_State_M.CHARGING;
                         }
                         else
                         {
@@ -99,21 +99,21 @@ public class AI_Mushroom : MonoBehaviour
 
                             cooldownCounter = cooldownTime;
 
-                            currentAIState = AI_State.CHARGING;
+                            currentAIState = AI_State_M.CHARGING;
                         }
                        
                     }
 
                     else
                     {
-                        currentAIState = AI_State.IDLE;
+                        currentAIState = AI_State_M.IDLE;
                         Debug.Log("Idle");
                     }
                 }
 
                 else
                 {
-                    currentAIState = AI_State.IDLE;
+                    currentAIState = AI_State_M.IDLE;
                     Debug.Log("Idle");
                 }
 
