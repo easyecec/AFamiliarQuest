@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 // Enemy states
-public enum AI_State
+public enum AI_State_F
 {
     PATROLLING, CHASING, ATTACKING
 }
@@ -13,9 +13,9 @@ public class AI_Fairy : MonoBehaviour
 {
     PlayerManager playerManager;
 
-    //AI_States variables
+    //AI_State variables
 
-    [SerializeField] private AI_State currentAIState; //Saves the current enum value (current state)
+    [SerializeField] private AI_State_F currentAIState; //Saves the current enum value (current state)
 
     [SerializeField] private float cooldownTime = 1f; //Time between each attack
 
@@ -41,13 +41,13 @@ public class AI_Fairy : MonoBehaviour
     }
 
 
-    //method that tracks the AI_States
+    //method that tracks the AI_State
     void enemyStates()
     {
         //Create Switch to determine AI state
         switch (currentAIState)
         {
-            case AI_State.PATROLLING:
+            case AI_State_F.PATROLLING:
 
                 if (!canSeePlayer)
                 {
@@ -81,17 +81,17 @@ public class AI_Fairy : MonoBehaviour
                 {
                     if (this.GameObject.fairyPosition.y != playerManager.playerPosition.y)
                     {
-                        currentAIState = AI_State.CHASING;
+                        currentAIState = AI_State_F.CHASING;
                     }
                     else
                     {
-                        currentAIState = AI_State.ATTACKING;
+                        currentAIState = AI_State_F.ATTACKING;
                     }
                 }
 
                 break;
 
-            case AI_State.CHASING:
+            case AI_State_F.CHASING:
 
                 if (canSeePlayer)
                 {
@@ -113,18 +113,18 @@ public class AI_Fairy : MonoBehaviour
                     //Attack
                     else
                     {
-                        currentAIState = AI_State.ATTACKING;
+                        currentAIState = AI_State_F.ATTACKING;
                     }
 
                 }
                 else
                 {
-                    currentAIState = AI_State.PATROLLING;
+                    currentAIState = AI_State_F.PATROLLING;
                 }
 
                 break;
 
-            case AI_State.ATTACKING:
+            case AI_State_F.ATTACKING:
                 //Will attack while seeing the player
                 if (canSeePlayer)
                 {
@@ -172,20 +172,20 @@ public class AI_Fairy : MonoBehaviour
                         //If player moves out of range chase
                         else
                         {
-                            currentAIState = AI_State.CHASING;
+                            currentAIState = AI_State_F.CHASING;
                         }
                     }
                     //If the player dies go back to patrolling
                     else
                     {
-                        currentAIState = AI_State.PATROLLING;
+                        currentAIState = AI_State_F.PATROLLING;
                         Debug.Log("Patrolling");
                     }
                 }
                 //Patrol while player is out of line of sight
                 else
                 {
-                    currentAIState = AI_State.PATROLLING;
+                    currentAIState = AI_State_F.PATROLLING;
                     Debug.Log("Patrolling");
                 }
 
