@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        catAnim = gameObject.GetComponent<Animator>();
+        catAnim = gameObject.GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -38,12 +38,12 @@ public class PlayerController : MonoBehaviour
 
         if (hInput < 0)
         {
-            transform.rotation = Quaternion.Euler(0f, -90f, 0f);
+            transform.rotation = Quaternion.Euler(0f, -180f, 0f);
             catAnim.SetBool("Walking", true);
         }
         else if (hInput > 0)
         {
-            transform.rotation = Quaternion.Euler(0f, 90f, 0f);
+            transform.rotation = Quaternion.Euler(0f, 0f, 0f);
             catAnim.SetBool("Walking", true);
         }
         else
