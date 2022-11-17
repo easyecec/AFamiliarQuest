@@ -25,9 +25,10 @@ public class AI_Fairy : MonoBehaviour
 
     [SerializeField] private float patrolRange; //Limits area of movement
 
-    [SerializeField] private Vector3 fairyPosition; //Tracks position, remember to use this.GameObject for consistency
+    [SerializeField] private Vector2 fairyPosition; //Tracks position, remember to use this.GameObject for consistency
 
     private bool movePositive; // Decides whether the fairy moves up or down
+
 
     void Awake()
     {
@@ -54,9 +55,9 @@ public class AI_Fairy : MonoBehaviour
                     //Will go up until patrol limit
                     if (movePositive)
                     {
-                        if (this.GameObject.fairyPosition.y < patrolRange)
+                        if (this.fairyPosition.y < patrolRange)
                         {
-                            this.GameObject.fairyPosition.y += 0.1 * Time.deltaTime;
+                            this.fairyPosition.y += 0.1f * Time.deltaTime;
                         }
                         else
                         {
@@ -66,9 +67,9 @@ public class AI_Fairy : MonoBehaviour
                     else
                     {
                         //Will go down until patrol limit
-                        if (this.GameObject.fairyPosition.y > -patrolRange)
+                        if (this.fairyPosition.y > patrolRange)
                         {
-                            this.GameObject.fairyPosition.y -= 0.1 * Time.deltaTime;
+                            this.fairyPosition.y -= 0.1f * Time.deltaTime;
                         }
                         else
                         {
@@ -79,7 +80,7 @@ public class AI_Fairy : MonoBehaviour
                 }
                 else
                 {
-                    if (this.GameObject.fairyPosition.y != playerManager.playerPosition.y)
+                    if (this.fairyPosition.y != playerManager.playerPosition.y)
                     {
                         currentAIState = AI_State_F.CHASING;
                     }
@@ -96,17 +97,17 @@ public class AI_Fairy : MonoBehaviour
                 if (canSeePlayer)
                 {
                     //Chase until position matches
-                    if (this.GameObject.fairyPosition.y != playerManager.playerPosition.y)
+                    if (this.fairyPosition.y != playerManager.playerPosition.y)
                     {
                         //Chase player up
-                        if (this.GameObject.fairyPosition.y < playerManager.playerPosition.y)
+                        if (this.fairyPosition.y < playerManager.playerPosition.y)
                         {
-                            this.GameObject.fairyPosition.y += 0.1 * Time.deltaTime;
+                            this.fairyPosition.y += 0.1f * Time.deltaTime;
                         }
                         //Chase player down
-                        if (this.GameObject.fairyPosition.y > playerManager.playerPosition.y)
+                        if (this.fairyPosition.y > playerManager.playerPosition.y)
                         {
-                            this.GameObject.fairyPosition.y -= 0.1 * Time.deltaTime;
+                            this.fairyPosition.y -= 0.1f * Time.deltaTime;
                         }
                     }
 
@@ -132,7 +133,7 @@ public class AI_Fairy : MonoBehaviour
                     if (!playerManager.playerDead)
                     {
                         //Keep attacking while in same position as player
-                        if (this.GameObject.fairyPosition.y == playerManager.playerPosition.y)
+                        if (this.fairyPosition.y == playerManager.playerPosition.y)
                         {
                             //Make sure cooldown is on before attacking
                             if (cooldownCounter == 0)
@@ -193,7 +194,7 @@ public class AI_Fairy : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
@@ -202,7 +203,7 @@ public class AI_Fairy : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider other)
+    private void OnTriggerExit2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
