@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: cd944815b75321e4a95d410e87f29347
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Fortuitous Mouse
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: d25490945872e1c429b8b7a724db16fd, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
