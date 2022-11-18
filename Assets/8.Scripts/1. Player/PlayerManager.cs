@@ -25,8 +25,8 @@ public class PlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        coinAmount.text = coins.ToString();
-        livesLeft.text = lives.ToString();
+        /* coinAmount.text = coins.ToString();
+        livesLeft.text = lives.ToString(); */
 
         Lives();
         Dead();
