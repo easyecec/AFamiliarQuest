@@ -13,7 +13,10 @@ public class CoinsCollectible : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        playerManager.coins += 1;
-        Destroy(gameObject);
+        if (other.tag == "Player")
+        {
+            playerManager.coins += 1;
+            Destroy(gameObject);
+        }
     }
 }

@@ -14,6 +14,7 @@ public class PlayerManager : MonoBehaviour
     public bool shielded;
     public bool playerDead = false;
     public Vector3 playerPosition;
+
     void Start()
     {
         lives = 9;
@@ -63,7 +64,9 @@ public class PlayerManager : MonoBehaviour
     {
         if (other.tag == "MapEnd")
         {
-            playerDead=true;
+            //PlayerDead is usded also to trigger the dead animation and lose screen... we should have a win screen 
+            //playerDead=true;
+
             SceneManager.LoadScene("GameOverScreen");
         }
 
