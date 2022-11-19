@@ -20,6 +20,8 @@ public class AI_Mushroom : MonoBehaviour
 
     [SerializeField] private float cooldownTime = 2f; //Time between each attack
 
+    [SerializeField] private Animator catAnim;
+
     private bool canSeePlayer;
 
     private float cooldownCounter; //Tracks the cooldown time
@@ -57,8 +59,6 @@ public class AI_Mushroom : MonoBehaviour
 
                 if (cooldownCounter > 0)
                 {
-                    Debug.Log("Charging");
-                    Debug.Log(cooldownCounter);
                     cooldownCounter -= Time.deltaTime;
                 }
 
@@ -83,6 +83,7 @@ public class AI_Mushroom : MonoBehaviour
                             if (playerManager.mageArmor == playerManager.lives)
                             {
                                 playerManager.mageArmor -= 1;
+                                catAnim.SetTrigger("Damaged");
                             }
                             else
                             {
@@ -121,17 +122,18 @@ public class AI_Mushroom : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
             {
                 canSeePlayer = true;
+                catAnim = other.gameObject.GetComponent<Animator>();
                 Debug.Log("PlayerEnteredTheArea");
             }
         
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")
             {
