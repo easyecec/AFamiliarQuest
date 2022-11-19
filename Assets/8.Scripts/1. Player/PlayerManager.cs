@@ -10,7 +10,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI livesLeft;
     public int lives;
     public int coins;
-    public int mageArmor;
+    public int tempHitPoints;
     public bool shielded;
     public bool playerDead = false;
     public Vector3 playerPosition;
@@ -20,7 +20,7 @@ public class PlayerManager : MonoBehaviour
         lives = 9;
         coins = 0;
         shielded = false;
-        mageArmor= 0;
+        tempHitPoints= 0;
     }
 
     // Update is called once per frame
@@ -50,7 +50,7 @@ public class PlayerManager : MonoBehaviour
 
     void MageArmor()
     {
-        if (mageArmor > 0)
+        if (tempHitPoints > 0)
         {
             shielded= true;
         }
@@ -60,7 +60,7 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "MapEnd")
         {

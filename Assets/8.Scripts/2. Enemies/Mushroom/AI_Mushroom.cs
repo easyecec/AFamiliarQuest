@@ -22,7 +22,7 @@ public class AI_Mushroom : MonoBehaviour
 
     [SerializeField] private Animator catAnim;
 
-    private bool canSeePlayer;
+    [SerializeField] private bool canSeePlayer;
 
     private float cooldownCounter; //Tracks the cooldown time
 
@@ -80,33 +80,23 @@ public class AI_Mushroom : MonoBehaviour
 
                         if(playerManager.shielded)
                         {
-                            if (playerManager.mageArmor == playerManager.lives)
-                            {
-                                playerManager.mageArmor -= 1;
-                                catAnim.SetTrigger("Damaged");
-                            }
-                            else
-                            {
-                                playerManager.lives-= 1;
-                            }
-                            
-                            cooldownCounter = cooldownTime;
-
-                            currentAIState = AI_State_M.CHARGING;
+                            playerManager.tempHitPoints -= 1;
+                            catAnim.SetTrigger("Damaged");
                         }
                         else
                         {
-                            playerManager.lives -= 1;
-
-                            cooldownCounter = cooldownTime;
-
-                            currentAIState = AI_State_M.CHARGING;
+                            playerManager.lives-= 1;
+                            catAnim.SetTrigger("Damaged");
                         }
-                       
+                            
+                        cooldownCounter = cooldownTime;
+
+                        currentAIState = AI_State_M.CHARGING;
                     }
 
                     else
                     {
+                        cooldownCounter = cooldownTime;
                         currentAIState = AI_State_M.IDLE;
                         Debug.Log("Idle");
                     }

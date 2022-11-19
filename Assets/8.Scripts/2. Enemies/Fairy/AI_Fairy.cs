@@ -144,25 +144,16 @@ public class AI_Fairy : MonoBehaviour
                                 //Damage changes based on power-up effect
                                 if (playerManager.shielded)
                                 {
-                                    if (playerManager.mageArmor == playerManager.lives)
-                                    {
-                                        playerManager.mageArmor -= 1;
-                                    }
-                                    else
-                                    {
-                                        playerManager.lives -= 1;
-                                    }
-
-                                    cooldownCounter = cooldownTime;
+                                    playerManager.tempHitPoints -= 1;
                                 }
-                                //Damage if no power-up is in effect
                                 else
                                 {
                                     playerManager.lives -= 1;
-                                    cooldownCounter = cooldownTime;
-
                                 }
+
+                                cooldownCounter = cooldownTime;
                             }
+
                             //If cooldown is not reset cooldown before attacking
                             else
                             {
@@ -175,6 +166,7 @@ public class AI_Fairy : MonoBehaviour
                         {
                             currentAIState = AI_State_F.CHASING;
                         }
+
                     }
                     //If the player dies go back to patrolling
                     else
@@ -194,7 +186,7 @@ public class AI_Fairy : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
@@ -203,7 +195,7 @@ public class AI_Fairy : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")
         {

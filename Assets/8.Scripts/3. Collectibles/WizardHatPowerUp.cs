@@ -14,7 +14,7 @@ public class WizardHatPowerUp : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         playerManager.lives = 9;
-        playerManager.mageArmor=9;
+        playerManager.tempHitPoints=9;
         Destroy(gameObject);
     }
 }
