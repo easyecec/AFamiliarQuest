@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -31,7 +32,7 @@ public class PlayerManager : MonoBehaviour
 
         Lives();
         Dead();
-
+        playerPosition = this.transform.position;
     }
 
     void Lives()

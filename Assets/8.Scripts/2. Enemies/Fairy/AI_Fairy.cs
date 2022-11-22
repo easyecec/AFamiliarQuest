@@ -9,31 +9,75 @@ public enum AI_State_F
     PATROLLING, CHASING, ATTACKING
 }
 
+//[RequireComponent(typeof(NavMeshAgent))]
 public class AI_Fairy : MonoBehaviour
 {
     PlayerManager playerManager;
+
+    [SerializeField] private Transform Target;
 
     //AI_State variables
 
     [SerializeField] private AI_State_F currentAIState; //Saves the current enum value (current state)
 
-    [SerializeField] private float cooldownTime = 1f; //Time between each attack
+    //Time between each attack
+    [SerializeField] private float cooldownTime;
 
-    private bool canSeePlayer;
+    //Determines if the player is in
+    private bool canSeePlayer; 
+    
+    //Tracks the cooldown time
+    private float cooldownCounter; 
+    
+    //Determines range of patrol
+    [SerializeField] private float patrolRange;
 
-    private float cooldownCounter; //Tracks the cooldown time
+    //Determines whether player should be able to trigger collider
+    private bool playerInRangeY;
+    private bool playerInRangeX;
 
-    [SerializeField] private float patrolRange; //Limits area of movement
+    //Determines whether player is within a margin of error for being eligible for being attacked
+    private bool playerInAttackRange;
+    //Determines range of attack
+    private float attackRange;
 
-    [SerializeField] private Vector2 fairyPosition; //Tracks position, remember to use this.GameObject for consistency
+    //Determine NPC speed
+    [SerializeField] private float fairySpeed;
 
-    private bool movePositive; // Decides whether the fairy moves up or down
+    //Values used for determining where the movement limit for this object instance will be
+    //Tracks range of heights under which the player can trigger the collider
+    [SerializeField] private float upperLimitY;
+    [SerializeField] private float lowerLimitY;
+
+
+    //Starting position values taken for reference
+    [SerializeField] private float startX;
+    [SerializeField] private float startY;
+    [SerializeField] private float startZ;
+
+    [SerializeField] private bool movePositive; // Decides whether the fairy moves up or down
 
 
     void Awake()
     {
         playerManager = GameObject.Find("Player").GetComponent<PlayerManager>();
-        cooldownCounter = cooldownTime;
+
+        cooldownTime = 2f;
+        cooldownCounter = 0f;
+        patrolRange = 4.55f;
+        fairySpeed = 3.2f;
+        movePositive = true;
+
+        startY = this.transform.position.y;
+        startX= this.transform.position.x;
+        startZ= this.transform.position.z;
+
+        upperLimitY = startY + patrolRange;
+        lowerLimitY = startY - patrolRange;
+
+        attackRange = 0.025f;
+        
+        //Agent = GetComponent<NavMeshAgent>();
     }
 
     void Update()
@@ -50,28 +94,32 @@ public class AI_Fairy : MonoBehaviour
         {
             case AI_State_F.PATROLLING:
 
-                if (!canSeePlayer)
+                playerInRangeY = (lowerLimitY < playerManager.playerPosition.y) && (playerManager.playerPosition.y < upperLimitY);
+                playerInAttackRange = (playerManager.playerPosition.y - attackRange < this.transform.position.y) && (this.transform.position.y < playerManager.playerPosition.y + attackRange);
+                if (!playerInRangeY)
                 {
                     //Will go up until patrol limit
                     if (movePositive)
                     {
-                        if (this.fairyPosition.y < patrolRange)
+                        if (this.transform.position.y < upperLimitY)
                         {
-                            this.fairyPosition.y += 0.1f * Time.deltaTime;
+                            
+                            transform.Translate(Vector3.up * fairySpeed * Time.deltaTime);
+
                         }
-                        else
+                        else if (this.transform.position.y >= upperLimitY)
                         {
                             movePositive = false;
                         }
                     }
-                    else
+                    else if (!movePositive)
                     {
                         //Will go down until patrol limit
-                        if (this.fairyPosition.y > patrolRange)
+                        if (this.transform.position.y > lowerLimitY)
                         {
-                            this.fairyPosition.y -= 0.1f * Time.deltaTime;
+                            transform.Translate(Vector3.down * fairySpeed * Time.deltaTime);
                         }
-                        else
+                        else if (this.transform.position.y <= lowerLimitY)
                         {
                             movePositive = true;
                         }
@@ -79,35 +127,37 @@ public class AI_Fairy : MonoBehaviour
                     Debug.Log("Patrolling");
                 }
                 else
-                {
-                    if (this.fairyPosition.y != playerManager.playerPosition.y)
+                {   
+                    if (!playerInAttackRange)
                     {
                         currentAIState = AI_State_F.CHASING;
                     }
-                    else
+                    else if(playerInAttackRange && playerInRangeX && playerInRangeY)
                     {
                         currentAIState = AI_State_F.ATTACKING;
                     }
+
                 }
 
                 break;
 
             case AI_State_F.CHASING:
-
-                if (canSeePlayer)
+                
+                playerInRangeY = (lowerLimitY < playerManager.playerPosition.y) && (playerManager.playerPosition.y < upperLimitY);
+                playerInRangeX = (startX-5 < playerManager.playerPosition.y) && (startX+5 < upperLimitY);
+                playerInAttackRange = (playerManager.playerPosition.y - attackRange < this.transform.position.y) && (this.transform.position.y < playerManager.playerPosition.y + attackRange);
+                if (playerInRangeY && playerInRangeX)
                 {
                     //Chase until position matches
-                    if (this.fairyPosition.y != playerManager.playerPosition.y)
+                    if (!playerInAttackRange)
                     {
-                        //Chase player up
-                        if (this.fairyPosition.y < playerManager.playerPosition.y)
+                       if(playerManager.playerPosition.y < this.transform.position.y)
                         {
-                            this.fairyPosition.y += 0.1f * Time.deltaTime;
+                            transform.Translate(Vector3.down * fairySpeed * Time.deltaTime);
                         }
-                        //Chase player down
-                        if (this.fairyPosition.y > playerManager.playerPosition.y)
+                        else
                         {
-                            this.fairyPosition.y -= 0.1f * Time.deltaTime;
+                            transform.Translate(Vector3.up * fairySpeed * Time.deltaTime);
                         }
                     }
 
@@ -116,7 +166,6 @@ public class AI_Fairy : MonoBehaviour
                     {
                         currentAIState = AI_State_F.ATTACKING;
                     }
-
                 }
                 else
                 {
@@ -126,14 +175,17 @@ public class AI_Fairy : MonoBehaviour
                 break;
 
             case AI_State_F.ATTACKING:
+                
+                playerInRangeX = (startX - 5 < playerManager.playerPosition.y) && (startX + 5 < upperLimitY);
+                playerInAttackRange = (playerManager.playerPosition.y - attackRange < this.transform.position.y) && (this.transform.position.y < playerManager.playerPosition.y + attackRange);
                 //Will attack while seeing the player
-                if (canSeePlayer)
+                if (canSeePlayer && playerInRangeY && playerInRangeX)
                 {
                     //Attack player while the player is alive
                     if (!playerManager.playerDead)
                     {
                         //Keep attacking while in same position as player
-                        if (this.fairyPosition.y == playerManager.playerPosition.y)
+                        if (playerInAttackRange)
                         {
                             //Make sure cooldown is on before attacking
                             if (cooldownCounter == 0)
