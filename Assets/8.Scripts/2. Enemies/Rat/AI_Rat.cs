@@ -4,13 +4,11 @@ using UnityEngine;
 using UnityEngine.AI;
 
 // Enemy states
-public enum AI_State_F
+public enum AI_State_R
 {
     PATROLLING, CHASING, ATTACKING
 }
-
-//[RequireComponent(typeof(NavMeshAgent))]
-public class AI_Fairy : MonoBehaviour
+public class AI_Rat : MonoBehaviour
 {
     PlayerManager playerManager;
 
@@ -18,17 +16,17 @@ public class AI_Fairy : MonoBehaviour
 
     //AI_State variables
 
-    [SerializeField] private AI_State_F currentAIState; //Saves the current enum value (current state)
+    [SerializeField] private AI_State_R currentAIState; //Saves the current enum value (current state)
 
     //Time between each attack
     [SerializeField] private float cooldownTime;
 
     //Determines if the player is in
-    private bool canSeePlayer; 
-    
+    private bool canSeePlayer;
+
     //Tracks the cooldown time
-    private float cooldownCounter; 
-    
+    private float cooldownCounter;
+
     //Determines range of patrol
     [SerializeField] private float patrolRange;
 
@@ -42,12 +40,12 @@ public class AI_Fairy : MonoBehaviour
     private float attackRange;
 
     //Determine NPC speed
-    [SerializeField] private float fairySpeed;
+    [SerializeField] private float ratSpeed;
 
     //Values used for determining where the movement limit for this object instance will be
     //Tracks range of heights under which the player can trigger the collider
-    [SerializeField] private float upperLimitY;
-    [SerializeField] private float lowerLimitY;
+    [SerializeField] private float upperLimitX;
+    [SerializeField] private float lowerLimitX;
 
 
     //Starting position values taken for reference
@@ -57,7 +55,6 @@ public class AI_Fairy : MonoBehaviour
 
     [SerializeField] private bool movePositive; // Decides whether the fairy moves up or down
 
-
     void Awake()
     {
         playerManager = GameObject.Find("Player").GetComponent<PlayerManager>();
@@ -65,29 +62,27 @@ public class AI_Fairy : MonoBehaviour
         cooldownTime = 2f;
         cooldownCounter = 0f;
         patrolRange = 4.55f;
-        fairySpeed = 3.2f;
+        ratSpeed = 3.2f;
         movePositive = true;
 
         startY = this.transform.position.y;
-        startX= this.transform.position.x;
-        startZ= this.transform.position.z;
+        startX = this.transform.position.x;
+        startZ = this.transform.position.z;
 
-        upperLimitY = startY + patrolRange;
-        lowerLimitY = startY - patrolRange;
+        upperLimitX = startX + patrolRange;
+        lowerLimitX = startX - patrolRange;
 
         attackRange = 0.025f;
-        
-        //Agent = GetComponent<NavMeshAgent>();
     }
 
+    // Update is called once per frame
     void Update()
     {
-        playerInRangeX = (startX - patrolRange < playerManager.playerPosition.x) && (startX + patrolRange < playerManager.playerPosition.x);
-        playerInRangeY = (lowerLimitY < playerManager.playerPosition.y) && (playerManager.playerPosition.y < upperLimitY);
+        playerInRangeX = (startX - patrolRange < playerManager.playerPosition.x) && (startX + patrolRange < upperLimitX);
+        playerInRangeY = (startY - attackRange < playerManager.playerPosition.y) && (playerManager.playerPosition.y < startY+attackRange);
         playerInAttackRange = (playerManager.playerPosition.y - attackRange < this.transform.position.y) && (this.transform.position.y < playerManager.playerPosition.y + attackRange);
         enemyStates();
     }
-
 
     //method that tracks the AI_State
     void enemyStates()
@@ -95,32 +90,32 @@ public class AI_Fairy : MonoBehaviour
         //Create Switch to determine AI state
         switch (currentAIState)
         {
-            case AI_State_F.PATROLLING:
+            case AI_State_R.PATROLLING:
 
-                if (!playerInRangeY)
+                if (!playerInRangeX)
                 {
-                    //Will go up until patrol limit
+                    //Will go forward until patrol limit
                     if (movePositive)
                     {
-                        if (this.transform.position.y < upperLimitY)
+                        if (this.transform.position.x < upperLimitX)
                         {
-                            
-                            transform.Translate(Vector3.up * fairySpeed * Time.deltaTime);
+
+                            transform.Translate(Vector3.right * ratSpeed * Time.deltaTime);
 
                         }
-                        else if (this.transform.position.y >= upperLimitY)
+                        else if (this.transform.position.y >= upperLimitX)
                         {
                             movePositive = false;
                         }
                     }
                     else if (!movePositive)
                     {
-                        //Will go down until patrol limit
-                        if (this.transform.position.y > lowerLimitY)
+                        //Will go back until patrol limit
+                        if (this.transform.position.x > lowerLimitX)
                         {
-                            transform.Translate(Vector3.down * fairySpeed * Time.deltaTime);
+                            transform.Translate(Vector3.left * ratSpeed * Time.deltaTime);
                         }
-                        else if (this.transform.position.y <= lowerLimitY)
+                        else if (this.transform.position.x <= lowerLimitX)
                         {
                             movePositive = true;
                         }
@@ -128,51 +123,51 @@ public class AI_Fairy : MonoBehaviour
                     Debug.Log("Patrolling");
                 }
                 else
-                {   
+                {
                     if (!playerInAttackRange && playerInRangeX && playerInRangeY)
                     {
-                        currentAIState = AI_State_F.CHASING;
+                        currentAIState = AI_State_R.CHASING;
                     }
-                    else if(playerInAttackRange && playerInRangeX && playerInRangeY)
+                    else if (playerInAttackRange && playerInRangeX && playerInRangeY)
                     {
-                        currentAIState = AI_State_F.ATTACKING;
+                        currentAIState = AI_State_R.ATTACKING;
                     }
 
                 }
 
                 break;
 
-            case AI_State_F.CHASING:
+            case AI_State_R.CHASING:
 
                 if (playerInRangeY && playerInRangeX)
                 {
                     //Chase until position matches
                     if (!playerInAttackRange)
                     {
-                       if(playerManager.playerPosition.y < this.transform.position.y)
+                        if (playerManager.playerPosition.x < this.transform.position.x)
                         {
-                            transform.Translate(Vector3.down * fairySpeed * Time.deltaTime);
+                            transform.Translate(Vector3.left * ratSpeed * Time.deltaTime);
                         }
                         else
                         {
-                            transform.Translate(Vector3.up * fairySpeed * Time.deltaTime);
+                            transform.Translate(Vector3.right * ratSpeed * Time.deltaTime);
                         }
                     }
 
                     //Attack
                     else
                     {
-                        currentAIState = AI_State_F.ATTACKING;
+                        currentAIState = AI_State_R.ATTACKING;
                     }
                 }
                 else
                 {
-                    currentAIState = AI_State_F.PATROLLING;
+                    currentAIState = AI_State_R.PATROLLING;
                 }
 
                 break;
 
-            case AI_State_F.ATTACKING:
+            case AI_State_R.ATTACKING:
 
                 //Will attack while seeing the player
                 if (canSeePlayer && playerInRangeY && playerInRangeX)
@@ -209,21 +204,21 @@ public class AI_Fairy : MonoBehaviour
                         //If player moves out of range chase
                         else
                         {
-                            currentAIState = AI_State_F.CHASING;
+                            currentAIState = AI_State_R.CHASING;
                         }
 
                     }
                     //If the player dies go back to patrolling
                     else
                     {
-                        currentAIState = AI_State_F.PATROLLING;
+                        currentAIState = AI_State_R.PATROLLING;
                         Debug.Log("Patrolling");
                     }
                 }
                 //Patrol while player is out of line of sight
                 else
                 {
-                    currentAIState = AI_State_F.PATROLLING;
+                    currentAIState = AI_State_R.PATROLLING;
                     Debug.Log("Patrolling");
                 }
 

@@ -59,7 +59,7 @@ public class AI_Mushroom : MonoBehaviour
 
                 if (cooldownCounter > 0)
                 {
-                    cooldownCounter -= Time.deltaTime;
+                    this.cooldownCounter -= Time.deltaTime;
                 }
 
                 else 
@@ -89,14 +89,14 @@ public class AI_Mushroom : MonoBehaviour
                             catAnim.SetTrigger("Damaged");
                         }
                             
-                        cooldownCounter = cooldownTime;
+                        this.cooldownCounter = cooldownTime;
 
                         currentAIState = AI_State_M.CHARGING;
                     }
 
                     else
                     {
-                        cooldownCounter = cooldownTime;
+                        this.cooldownCounter = cooldownTime;
                         currentAIState = AI_State_M.IDLE;
                         Debug.Log("Idle");
                     }
