@@ -97,7 +97,7 @@ public class AI_Fairy : MonoBehaviour
         {
             case AI_State_F.PATROLLING:
 
-                if (!playerInRangeY)
+                if (!canSeePlayer)
                 {
                     //Will go up until patrol limit
                     if (movePositive)
@@ -129,11 +129,11 @@ public class AI_Fairy : MonoBehaviour
                 }
                 else
                 {   
-                    if (!playerInAttackRange && playerInRangeX && playerInRangeY)
+                    if (!playerInAttackRange && canSeePlayer && playerInRangeY)
                     {
                         currentAIState = AI_State_F.CHASING;
                     }
-                    else if(playerInAttackRange && playerInRangeX && playerInRangeY)
+                    else if(playerInAttackRange && canSeePlayer && playerInRangeY)
                     {
                         currentAIState = AI_State_F.ATTACKING;
                     }
@@ -144,7 +144,7 @@ public class AI_Fairy : MonoBehaviour
 
             case AI_State_F.CHASING:
 
-                if (playerInRangeY && playerInRangeX)
+                if (playerInRangeY && canSeePlayer)
                 {
                     //Chase until position matches
                     if (!playerInAttackRange)
@@ -175,7 +175,7 @@ public class AI_Fairy : MonoBehaviour
             case AI_State_F.ATTACKING:
 
                 //Will attack while seeing the player
-                if (canSeePlayer && playerInRangeY && playerInRangeX)
+                if (canSeePlayer && playerInRangeY)
                 {
                     //Attack player while the player is alive
                     if (!playerManager.playerDead)
