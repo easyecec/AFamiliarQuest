@@ -62,7 +62,7 @@ public class AI_Rat : MonoBehaviour
         cooldownTime = 2f;
         cooldownCounter = 0f;
         patrolRange = 4.55f;
-        ratSpeed = 3.2f;
+        ratSpeed = 2.85f;
         movePositive = true;
 
         startX = this.transform.position.x;
