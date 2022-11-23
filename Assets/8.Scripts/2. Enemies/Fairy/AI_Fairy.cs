@@ -82,7 +82,7 @@ public class AI_Fairy : MonoBehaviour
 
     void Update()
     {
-        playerInRangeX = (startX - patrolRange < playerManager.playerPosition.x) && (startX + patrolRange < playerManager.playerPosition.x);
+        playerInRangeX = (startX - patrolRange-0.5 < playerManager.playerPosition.x) && (playerManager.playerPosition.x < startX + patrolRange);
         playerInRangeY = (lowerLimitY < playerManager.playerPosition.y) && (playerManager.playerPosition.y < upperLimitY);
         playerInAttackRange = (playerManager.playerPosition.y - attackRange < this.transform.position.y) && (this.transform.position.y < playerManager.playerPosition.y + attackRange);
         enemyStates();
@@ -97,7 +97,7 @@ public class AI_Fairy : MonoBehaviour
         {
             case AI_State_F.PATROLLING:
 
-                if (!canSeePlayer)
+                if (!playerInRangeY || !playerInRangeX)
                 {
                     //Will go up until patrol limit
                     if (movePositive)
@@ -110,7 +110,7 @@ public class AI_Fairy : MonoBehaviour
                         }
                         else if (this.transform.position.y >= upperLimitY)
                         {
-                            movePositive = false;
+                            this.movePositive = false;
                         }
                     }
                     else if (!movePositive)
@@ -122,18 +122,18 @@ public class AI_Fairy : MonoBehaviour
                         }
                         else if (this.transform.position.y <= lowerLimitY)
                         {
-                            movePositive = true;
+                            this.movePositive = true;
                         }
                     }
                     Debug.Log("Patrolling");
                 }
                 else
                 {   
-                    if (!playerInAttackRange && canSeePlayer && playerInRangeY)
+                    if (!playerInAttackRange && playerInRangeX && playerInRangeY)
                     {
                         currentAIState = AI_State_F.CHASING;
                     }
-                    else if(playerInAttackRange && canSeePlayer && playerInRangeY)
+                    else if(playerInAttackRange && playerInRangeX && playerInRangeY)
                     {
                         currentAIState = AI_State_F.ATTACKING;
                     }
@@ -144,26 +144,34 @@ public class AI_Fairy : MonoBehaviour
 
             case AI_State_F.CHASING:
 
-                if (playerInRangeY && canSeePlayer)
+                if (playerInRangeY)
                 {
-                    //Chase until position matches
-                    if (!playerInAttackRange)
+                    if(playerInRangeX)
                     {
-                       if(playerManager.playerPosition.y < this.transform.position.y)
+                        //Chase until position matches
+                        if (!playerInAttackRange)
                         {
-                            transform.Translate(Vector3.down * fairySpeed * Time.deltaTime);
+                            if (playerManager.playerPosition.y < this.transform.position.y)
+                            {
+                                transform.Translate(Vector3.down * fairySpeed * Time.deltaTime);
+                            }
+                            else
+                            {
+                                transform.Translate(Vector3.up * fairySpeed * Time.deltaTime);
+                            }
                         }
+
+                        //Attack
                         else
                         {
-                            transform.Translate(Vector3.up * fairySpeed * Time.deltaTime);
+                            currentAIState = AI_State_F.ATTACKING;
                         }
                     }
-
-                    //Attack
                     else
                     {
-                        currentAIState = AI_State_F.ATTACKING;
+                        currentAIState = AI_State_F.PATROLLING;
                     }
+
                 }
                 else
                 {

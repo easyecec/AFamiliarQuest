@@ -65,8 +65,8 @@ public class AI_Rat : MonoBehaviour
         ratSpeed = 3.2f;
         movePositive = true;
 
-        startY = this.transform.position.y;
         startX = this.transform.position.x;
+        startY = this.transform.position.y;
         startZ = this.transform.position.z;
 
         upperLimitX = startX + patrolRange;
@@ -78,9 +78,9 @@ public class AI_Rat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerInRangeX = (startX - patrolRange < playerManager.playerPosition.x) && (startX + patrolRange < upperLimitX);
-        playerInRangeY = (startY - attackRange < playerManager.playerPosition.y) && (playerManager.playerPosition.y < startY+attackRange);
-        playerInAttackRange = (playerManager.playerPosition.y - attackRange < this.transform.position.y) && (this.transform.position.y < playerManager.playerPosition.y + attackRange);
+        playerInRangeX = (lowerLimitX < playerManager.playerPosition.x) && (playerManager.playerPosition.x < upperLimitX);
+        playerInRangeY = (startY - 0.2 < playerManager.playerPosition.y) && (playerManager.playerPosition.y < startY+0.2);
+        playerInAttackRange = (playerManager.playerPosition.x - attackRange < this.transform.position.x) && (this.transform.position.x < playerManager.playerPosition.x + attackRange);
         enemyStates();
     }
 
@@ -103,9 +103,9 @@ public class AI_Rat : MonoBehaviour
                             transform.Translate(Vector3.right * ratSpeed * Time.deltaTime);
 
                         }
-                        else if (this.transform.position.y >= upperLimitX)
+                        else if (this.transform.position.x >= upperLimitX)
                         {
-                            movePositive = false;
+                            this.movePositive = false;
                         }
                     }
                     else if (!movePositive)
@@ -117,7 +117,7 @@ public class AI_Rat : MonoBehaviour
                         }
                         else if (this.transform.position.x <= lowerLimitX)
                         {
-                            movePositive = true;
+                            this.movePositive = true;
                         }
                     }
                     Debug.Log("Patrolling");
@@ -139,26 +139,34 @@ public class AI_Rat : MonoBehaviour
 
             case AI_State_R.CHASING:
 
-                if (playerInRangeY && playerInRangeX)
+                if (playerInRangeX)
                 {
-                    //Chase until position matches
-                    if (!playerInAttackRange)
+                    if (playerInRangeY)
                     {
-                        if (playerManager.playerPosition.x < this.transform.position.x)
+                        //Chase until position matches
+                        if (!playerInAttackRange)
                         {
-                            transform.Translate(Vector3.left * ratSpeed * Time.deltaTime);
+                            if (playerManager.playerPosition.x < this.transform.position.x)
+                            {
+                                transform.Translate(Vector3.left * ratSpeed * Time.deltaTime);
+                            }
+                            else
+                            {
+                                transform.Translate(Vector3.right * ratSpeed * Time.deltaTime);
+                            }
                         }
+
+                        //Attack
                         else
                         {
-                            transform.Translate(Vector3.right * ratSpeed * Time.deltaTime);
+                            currentAIState = AI_State_R.ATTACKING;
                         }
                     }
-
-                    //Attack
                     else
                     {
-                        currentAIState = AI_State_R.ATTACKING;
+                        currentAIState= AI_State_R.CHASING;
                     }
+
                 }
                 else
                 {
@@ -170,7 +178,7 @@ public class AI_Rat : MonoBehaviour
             case AI_State_R.ATTACKING:
 
                 //Will attack while seeing the player
-                if (canSeePlayer && playerInRangeY && playerInRangeX)
+                if (canSeePlayer && playerInRangeX && playerInRangeY)
                 {
                     //Attack player while the player is alive
                     if (!playerManager.playerDead)
