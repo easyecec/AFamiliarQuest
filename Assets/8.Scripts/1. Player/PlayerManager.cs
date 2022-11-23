@@ -7,6 +7,7 @@ using Unity.VisualScripting;
 
 public class PlayerManager : MonoBehaviour
 {
+    private Animator playerAnim;
     [SerializeField] private TextMeshProUGUI coinAmount;
     [SerializeField] private TextMeshProUGUI livesLeft;
     public int lives;
@@ -22,6 +23,8 @@ public class PlayerManager : MonoBehaviour
         coins = 0;
         shielded = false;
         tempHitPoints= 0;
+
+        playerAnim = gameObject.GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -30,23 +33,18 @@ public class PlayerManager : MonoBehaviour
         /* coinAmount.text = coins.ToString();
         livesLeft.text = lives.ToString(); */
 
-        Lives();
         Dead();
         playerPosition = this.transform.position;
     }
 
-    void Lives()
-    {
-        if(lives <= 0)
-        {
-            playerDead = true;
-            Debug.Log("The player is dead");
-        }
-    }
-
     void Dead()
     {
-
+        if (lives <= 0 && !playerDead)
+        {
+            playerDead = true;
+            playerAnim.SetTrigger("Dead");
+            Debug.Log("The player is dead");
+        }
     }
 
     void MageArmor()
