@@ -85,7 +85,7 @@ public class AI_Mushroom : MonoBehaviour
                         }
                         else
                         {
-                            playerManager.lives-= 1;
+                            playerManager.lives -= 1;
                             catAnim.SetTrigger("Damaged");
                         }
                             
@@ -117,7 +117,7 @@ public class AI_Mushroom : MonoBehaviour
         if (other.tag == "Player")
             {
                 canSeePlayer = true;
-                catAnim = other.gameObject.GetComponent<Animator>();
+                catAnim = other.gameObject.GetComponentInChildren<Animator>();
                 Debug.Log("PlayerEnteredTheArea");
             }
         
