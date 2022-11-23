@@ -31,6 +31,8 @@ public class AI_Fairy : MonoBehaviour
     
     //Determines range of patrol
     [SerializeField] private float patrolRange;
+    [SerializeField] private bool hasPaused;
+    [SerializeField] private float stopTime;
 
     //Determines whether player should be able to trigger collider
     private bool playerInRangeY;
@@ -68,7 +70,10 @@ public class AI_Fairy : MonoBehaviour
         cooldownCounter = 0f;
         patrolRange = 4.55f;
         fairySpeed = 3.2f;
+
         movePositive = true;
+        hasPaused = false;
+        stopTime= 2f;
 
         startY = this.transform.position.y;
         startX= this.transform.position.x;
@@ -102,7 +107,7 @@ public class AI_Fairy : MonoBehaviour
                 if (!playerInRangeY || !playerInRangeX)
                 {
                     //Will go up until patrol limit
-                    if (movePositive)
+                    if (this.movePositive)
                     {
                         if (this.transform.position.y < upperLimitY)
                         {
@@ -112,10 +117,29 @@ public class AI_Fairy : MonoBehaviour
                         }
                         else if (this.transform.position.y >= upperLimitY)
                         {
-                            this.movePositive = false;
+                            if (this.hasPaused)
+                            {
+                                this.movePositive= false;
+                                this.hasPaused=false;
+                                
+                            }
+                            else
+                            {
+                                if(stopTime > 0)
+                                {
+                                    this.stopTime -= Time.deltaTime;
+                                }
+                                else
+                                {
+                                    this.hasPaused= true;
+                                    this.stopTime = 2f;
+                                }
+                                
+                            }
+                           
                         }
                     }
-                    else if (!movePositive)
+                    else if (!this.movePositive)
                     {
                         //Will go down until patrol limit
                         if (this.transform.position.y > lowerLimitY)
@@ -124,7 +148,23 @@ public class AI_Fairy : MonoBehaviour
                         }
                         else if (this.transform.position.y <= lowerLimitY)
                         {
-                            this.movePositive = true;
+                            if (this.hasPaused)
+                            {
+                                this.movePositive = true;
+                                this.hasPaused = false;
+                            }
+                            else
+                            {
+                                if (stopTime > 0)
+                                {
+                                    this.stopTime -= Time.deltaTime;
+                                }
+                                else
+                                {
+                                    this.hasPaused = true;
+                                    this.stopTime = 2f;
+                                }
+                            }
                         }
                     }
                     Debug.Log("Patrolling");
@@ -261,4 +301,5 @@ public class AI_Fairy : MonoBehaviour
             Debug.Log("PlayerExitedTheArea");
         }
     }
+
 }
