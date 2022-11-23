@@ -57,6 +57,8 @@ public class AI_Fairy : MonoBehaviour
 
     [SerializeField] private bool movePositive; // Decides whether the fairy moves up or down
 
+    //Stores the player animator
+    [SerializeField] private Animator catAnim;
 
     void Awake()
     {
@@ -205,10 +207,12 @@ public class AI_Fairy : MonoBehaviour
                                 if (playerManager.shielded)
                                 {
                                     playerManager.tempHitPoints -= 1;
+                                    catAnim.SetTrigger("Damaged");
                                 }
                                 else
                                 {
                                     playerManager.lives -= 1;
+                                    catAnim.SetTrigger("Damaged");
                                 }
 
                                 this.cooldownCounter = cooldownTime;
@@ -244,6 +248,7 @@ public class AI_Fairy : MonoBehaviour
         if (other.tag == "Player")
         {
             canSeePlayer = true;
+            catAnim = other.gameObject.GetComponentInChildren<Animator>();
             Debug.Log("PlayerEnteredTheArea");
         }
     }

@@ -20,6 +20,7 @@ public class AI_Mushroom : MonoBehaviour
 
     [SerializeField] private float cooldownTime = 2f; //Time between each attack
 
+    //Stores the player animator
     [SerializeField] private Animator catAnim;
 
     [SerializeField] private bool canSeePlayer;
