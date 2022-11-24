@@ -59,12 +59,14 @@ public class AI_Fairy : MonoBehaviour
 
     [SerializeField] private bool movePositive; // Decides whether the fairy moves up or down
 
-    //Stores the player animator
+    //Stores the animators
     [SerializeField] private Animator catAnim;
+    [SerializeField] private Animator fairyAnim;
 
     void Awake()
     {
         playerManager = GameObject.Find("Player").GetComponent<PlayerManager>();
+        fairyAnim = gameObject.GetComponentInChildren<Animator>();
 
         cooldownTime = 2f;
         cooldownCounter = 0f;
@@ -174,6 +176,7 @@ public class AI_Fairy : MonoBehaviour
                     if (!playerInAttackRange && playerInRangeX && playerInRangeY)
                     {
                         currentAIState = AI_State_F.CHASING;
+                        fairyAnim.SetBool("Chasing", true);
                     }
                     else if(playerInAttackRange && playerInRangeX && playerInRangeY)
                     {
@@ -212,12 +215,14 @@ public class AI_Fairy : MonoBehaviour
                     else
                     {
                         currentAIState = AI_State_F.PATROLLING;
+                        fairyAnim.SetBool("Chasing", false);
                     }
 
                 }
                 else
                 {
                     currentAIState = AI_State_F.PATROLLING;
+                    fairyAnim.SetBool("Chasing", false);
                 }
 
                 break;
@@ -247,11 +252,15 @@ public class AI_Fairy : MonoBehaviour
                                 if (playerManager.shielded)
                                 {
                                     playerManager.tempHitPoints -= 1;
+
+                                    fairyAnim.SetTrigger("Attack");
                                     catAnim.SetTrigger("Damaged");
                                 }
                                 else
                                 {
                                     playerManager.lives -= 1;
+
+                                    fairyAnim.SetTrigger("Attack");
                                     catAnim.SetTrigger("Damaged");
                                 }
 
@@ -262,6 +271,7 @@ public class AI_Fairy : MonoBehaviour
                         else
                         {
                             currentAIState = AI_State_F.CHASING;
+                            fairyAnim.SetBool("Chasing", true);
                         }
 
                     }
@@ -269,14 +279,14 @@ public class AI_Fairy : MonoBehaviour
                     else
                     {
                         currentAIState = AI_State_F.PATROLLING;
-                        Debug.Log("Patrolling");
+                        fairyAnim.SetBool("Chasing", false);
                     }
                 }
                 //Patrol while player is out of line of sight
                 else
                 {
                     currentAIState = AI_State_F.PATROLLING;
-                    Debug.Log("Patrolling");
+                    fairyAnim.SetBool("Chasing", false);
                 }
 
                 break;

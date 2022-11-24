@@ -55,12 +55,14 @@ public class AI_Rat : MonoBehaviour
 
     [SerializeField] private bool movePositive; // Decides whether the fairy moves up or down
 
-    //Stores the player animator
+    //Stores the animators
     [SerializeField] private Animator catAnim;
+    [SerializeField] private Animator snakeAnim;
 
     void Awake()
     {
         playerManager = GameObject.Find("Player").GetComponent<PlayerManager>();
+        snakeAnim = gameObject.GetComponentInChildren<Animator>();
 
         cooldownTime = 2f;
         cooldownCounter = 0f;
@@ -203,12 +205,18 @@ public class AI_Rat : MonoBehaviour
                                 if (playerManager.shielded)
                                 {
                                     playerManager.tempHitPoints -= 1;
+
+                                    //Animations
                                     catAnim.SetTrigger("Damaged");
+                                    snakeAnim.SetTrigger("Attacking");
                                 }
                                 else
                                 {
                                     playerManager.lives -= 1;
+
+                                    //Animations
                                     catAnim.SetTrigger("Damaged");
+                                    snakeAnim.SetTrigger("Attacking");
                                 }
 
                                 this.cooldownCounter = cooldownTime;
