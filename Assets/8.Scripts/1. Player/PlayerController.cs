@@ -12,21 +12,29 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Animator catAnim;
+
+    PlayerManager playerManager;
+
     private Vector3 direction;
     private bool isGrounded;
     private bool jumping;
 
     public bool doubleJump = false;
 
-    void Start()
+    void Awake()
     {
+        playerManager = GameObject.Find("Player").GetComponent<PlayerManager>();
+
         catAnim = gameObject.GetComponentInChildren<Animator>();
     }
 
     void Update()
     {
-        MovePlayer();
-        Jump();
+        if (!playerManager.playerDead)
+        {
+            MovePlayer();
+            Jump();
+        }
     }
 
     void MovePlayer()
@@ -62,7 +70,7 @@ public class PlayerController : MonoBehaviour
             if (isGrounded)
             {
                 direction.y = jumpForce;
-                catAnim.SetTrigger("Jumping");
+                catAnim.SetBool("Jumping", true);
                 doubleJump = true;
             }
 
@@ -73,7 +81,22 @@ public class PlayerController : MonoBehaviour
                     direction.y = jumpForce;
                     doubleJump = false;
                 }
+
+                else
+                {
+                    catAnim.SetBool("Jumping", false);
+                }
             }
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "WorldFalling")
+        {
+            Debug.Log("Player fell");
+            playerManager.lives = 0;
+        }
+    }
+
 }

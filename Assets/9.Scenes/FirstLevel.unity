@@ -2080,10 +2080,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 79560885}
+  - component: {fileID: 79560887}
   - component: {fileID: 79560886}
+  - component: {fileID: 79560889}
+  - component: {fileID: 79560888}
   m_Layer: 8
   m_Name: WorldFalling
-  m_TagString: Untagged
+  m_TagString: WorldFalling
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2115,7 +2118,46 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 147.55, y: 1, z: 8.62}
+  m_Center: {x: 0, y: 1.51, z: 0}
+--- !u!65 &79560887
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79560884}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 147.55, y: 1, z: 8.62}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &79560888
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79560884}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 147.55, y: 1, z: 8.62}
+  m_Center: {x: -342.5, y: -46.3, z: 0}
+--- !u!65 &79560889
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79560884}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 147.55, y: 1, z: 8.62}
+  m_Center: {x: -342.5, y: -43.9, z: 0}
 --- !u!1 &79914555
 GameObject:
   m_ObjectHideFlags: 0
@@ -19264,6 +19306,7 @@ GameObject:
   - component: {fileID: 478669967}
   - component: {fileID: 478669966}
   - component: {fileID: 478669969}
+  - component: {fileID: 478669970}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -19400,6 +19443,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!135 &478669970
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478669963}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &493813783
 GameObject:
   m_ObjectHideFlags: 0
