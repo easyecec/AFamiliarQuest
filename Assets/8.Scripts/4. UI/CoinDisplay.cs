@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CoinDisplay : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    PlayerManager playerManager;
+
+    [SerializeField] private Text coinAmount; 
+
+    void Awake()
     {
-        
+        playerManager = GameObject.Find("Player").GetComponent<PlayerManager>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        coinAmount.text = playerManager.Coins.ToString("00");
     }
 }

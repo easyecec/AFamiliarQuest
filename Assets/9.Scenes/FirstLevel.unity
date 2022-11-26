@@ -3871,6 +3871,7 @@ GameObject:
   m_Component:
   - component: {fileID: 223221168}
   - component: {fileID: 223221169}
+  - component: {fileID: 223221170}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3919,6 +3920,19 @@ MonoBehaviour:
   - {fileID: 622708125}
   fullHeart: {fileID: 21300000, guid: dbdc11454627fca4291678b0b72bf046, type: 3}
   emptyHeart: {fileID: 21300000, guid: 927a09ee8a69f3540a493f1bcff9dbb7, type: 3}
+--- !u!114 &223221170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223221167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38e9a20fbccf97e4ab2add6f86ca3e36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinAmount: {fileID: 1632887636}
 --- !u!4 &224593820 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 03f5a15d405f03341bbe414977f01359, type: 3}
@@ -17517,6 +17531,7 @@ RectTransform:
   m_Children:
   - {fileID: 2014398117}
   - {fileID: 1531036305}
+  - {fileID: 1632887635}
   m_Father: {fileID: 1288721044}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -37412,7 +37427,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -791, y: -478}
+  m_AnchoredPosition: {x: -798.1, y: -479.3}
   m_SizeDelta: {x: 73.2592, y: 102.2321}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1531036306
@@ -39350,6 +39365,86 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1632887634
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1632887635}
+  - component: {fileID: 1632887637}
+  - component: {fileID: 1632887636}
+  m_Layer: 5
+  m_Name: CoinAmount
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1632887635
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632887634}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 421097000}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -647.4, y: -492.5}
+  m_SizeDelta: {x: 221.6884, y: 102.2321}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1632887636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632887634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 43acc1a1faaf3d54a95e999579608ec3, type: 3}
+    m_FontSize: 90
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 128
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 00
+--- !u!222 &1632887637
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632887634}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1640953443
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45541,8 +45636,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1971935279}
   - component: {fileID: 1971935282}
-  - component: {fileID: 1971935281}
   - component: {fileID: 1971935280}
+  - component: {fileID: 1971935281}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged

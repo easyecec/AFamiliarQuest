@@ -11,8 +11,8 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI coinAmount;
     [SerializeField] private TextMeshProUGUI livesLeft;
     [SerializeField] private int lives;
+    [SerializeField] private int coins;
 
-    public int coins;
     public int tempHitPoints;
     public bool shielded;
     public bool playerDead = false;
@@ -22,6 +22,12 @@ public class PlayerManager : MonoBehaviour
     {
         get { return lives; }
         set { lives = value; }
+    }
+
+    public int Coins
+    {
+        get { return coins; }
+        set { coins = value; }
     }
 
 

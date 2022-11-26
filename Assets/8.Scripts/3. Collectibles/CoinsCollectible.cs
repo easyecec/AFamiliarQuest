@@ -15,7 +15,7 @@ public class CoinsCollectible : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            playerManager.coins += 1;
+            playerManager.Coins += 1;
             Destroy(gameObject);
         }
     }
