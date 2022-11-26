@@ -212,7 +212,7 @@ public class AI_Rat : MonoBehaviour
                                 }
                                 else
                                 {
-                                    playerManager.lives -= 1;
+                                    playerManager.Lives -= 1;
 
                                     //Animations
                                     catAnim.SetTrigger("Damaged");

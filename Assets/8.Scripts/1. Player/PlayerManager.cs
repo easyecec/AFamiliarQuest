@@ -10,12 +10,20 @@ public class PlayerManager : MonoBehaviour
     private Animator playerAnim;
     [SerializeField] private TextMeshProUGUI coinAmount;
     [SerializeField] private TextMeshProUGUI livesLeft;
-    public int lives;
+    [SerializeField] private int lives;
+
     public int coins;
     public int tempHitPoints;
     public bool shielded;
     public bool playerDead = false;
     public Vector3 playerPosition;
+
+    public int Lives
+    {
+        get { return lives; }
+        set { lives = value; }
+    }
+
 
     void Start()
     {
@@ -43,7 +51,6 @@ public class PlayerManager : MonoBehaviour
         {
             playerDead = true;
             playerAnim.SetTrigger("Dead");
-            Debug.Log("The player is dead");
         }
     }
 
@@ -61,12 +68,9 @@ public class PlayerManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "MapEnd")
+        if (other.tag == "WorldFalling")
         {
-            //PlayerDead is usded also to trigger the dead animation and lose screen... we should have a win screen 
-            //playerDead=true;
-
-            SceneManager.LoadScene("GameOverScreen");
+            lives = 0;
         }
 
         else if(other.tag == "LevelCompleted")

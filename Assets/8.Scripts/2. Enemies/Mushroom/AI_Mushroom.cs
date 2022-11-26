@@ -86,7 +86,7 @@ public class AI_Mushroom : MonoBehaviour
                         }
                         else
                         {
-                            playerManager.lives -= 1;
+                            playerManager.Lives -= 1;
                             catAnim.SetTrigger("Damaged");
                         }
                             

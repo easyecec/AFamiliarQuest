@@ -258,7 +258,7 @@ public class AI_Fairy : MonoBehaviour
                                 }
                                 else
                                 {
-                                    playerManager.lives -= 1;
+                                    playerManager.Lives -= 1;
 
                                     fairyAnim.SetTrigger("Attack");
                                     catAnim.SetTrigger("Damaged");

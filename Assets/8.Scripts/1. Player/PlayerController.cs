@@ -90,13 +90,4 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.tag == "WorldFalling")
-        {
-            Debug.Log("Player fell");
-            playerManager.lives = 0;
-        }
-    }
-
 }

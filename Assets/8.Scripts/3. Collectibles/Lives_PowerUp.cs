@@ -13,7 +13,7 @@ public class Lives_PowerUp : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        playerManager.lives += 3;
+        playerManager.Lives += 3;
         Destroy(gameObject);
     }
 }

@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - WorldFalling
+  - LevelCompleted
   layers:
   - Default
   - TransparentFX
