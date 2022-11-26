@@ -37,7 +37,7 @@ public class AI_Rat : MonoBehaviour
     //Determines whether player is within a margin of error for being eligible for being attacked
     private bool playerInAttackRange;
     //Determines range of attack
-    private float attackRange;
+    [SerializeField] private float attackRange;
 
     //Determine NPC speed
     [SerializeField] private float ratSpeed;
@@ -77,7 +77,7 @@ public class AI_Rat : MonoBehaviour
         upperLimitX = startX + patrolRange;
         lowerLimitX = startX - patrolRange;
 
-        attackRange = 0.025f;
+        attackRange = 2.3f;
     }
 
     // Update is called once per frame
@@ -244,6 +244,18 @@ public class AI_Rat : MonoBehaviour
                 }
 
                 break;
+        }
+    }
+
+    private void turnToFace()
+    {
+        if(playerManager.playerPosition.x < this.transform.position.x)
+        {
+            this.transform.rotation = Quaternion.Euler(0f, -180f, 0f);
+        }
+        else if(this.transform.position.x < playerManager.playerPosition.x)
+        {
+            this.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         }
     }
 

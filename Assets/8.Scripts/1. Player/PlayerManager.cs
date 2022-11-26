@@ -12,7 +12,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI livesLeft;
     [SerializeField] private int lives;
     [SerializeField] private int coins;
-
+    [SerializeField] private float deadTime;
     public int tempHitPoints;
     public bool shielded;
     public bool playerDead = false;
@@ -37,6 +37,7 @@ public class PlayerManager : MonoBehaviour
         coins = 0;
         shielded = false;
         tempHitPoints= 0;
+        deadTime = 2.0f;
 
         playerAnim = gameObject.GetComponentInChildren<Animator>();
     }
@@ -48,6 +49,7 @@ public class PlayerManager : MonoBehaviour
         livesLeft.text = lives.ToString(); */
 
         Dead();
+        OnDeath();
         playerPosition = this.transform.position;
     }
 
@@ -57,6 +59,21 @@ public class PlayerManager : MonoBehaviour
         {
             playerDead = true;
             playerAnim.SetTrigger("Dead");
+        }
+    }
+
+    void OnDeath()
+    {
+        if (playerDead)
+        {
+            if (deadTime > 0)
+            {
+                this.deadTime -= Time.deltaTime;
+            }
+            else
+            {
+                SceneManager.LoadScene("GameOverScreen");
+            }
         }
     }
 
