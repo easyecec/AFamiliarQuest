@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -12,7 +13,7 @@ public class AI_Rat : MonoBehaviour
 {
     PlayerManager playerManager;
 
-    [SerializeField] private Transform Target;
+    [SerializeField] private BoxCollider patrolLimit;
 
     //AI_State variables
 
@@ -66,8 +67,8 @@ public class AI_Rat : MonoBehaviour
 
         cooldownTime = 2f;
         cooldownCounter = 0f;
-        patrolRange = 4.55f;
-        ratSpeed = 2.85f;
+        patrolRange = (patrolLimit.size.x/2);
+        ratSpeed = 4.5f;
         movePositive = true;
 
         startX = this.transform.position.x;
@@ -104,7 +105,7 @@ public class AI_Rat : MonoBehaviour
                     {
                         if (this.transform.position.x < upperLimitX)
                         {
-
+                            turnToFace("right");
                             transform.Translate(Vector3.right * ratSpeed * Time.deltaTime);
 
                         }
@@ -118,7 +119,8 @@ public class AI_Rat : MonoBehaviour
                         //Will go back until patrol limit
                         if (this.transform.position.x > lowerLimitX)
                         {
-                            transform.Translate(Vector3.left * ratSpeed * Time.deltaTime);
+                            turnToFace("left");
+                            transform.Translate(Vector3.right * ratSpeed * Time.deltaTime);
                         }
                         else if (this.transform.position.x <= lowerLimitX)
                         {
@@ -153,10 +155,12 @@ public class AI_Rat : MonoBehaviour
                         {
                             if (playerManager.playerPosition.x < this.transform.position.x)
                             {
-                                transform.Translate(Vector3.left * ratSpeed * Time.deltaTime);
+                                turnToFace("left");
+                                transform.Translate(Vector3.right * ratSpeed * Time.deltaTime);
                             }
                             else
                             {
+                                turnToFace("right");
                                 transform.Translate(Vector3.right * ratSpeed * Time.deltaTime);
                             }
                         }
@@ -247,17 +251,22 @@ public class AI_Rat : MonoBehaviour
         }
     }
 
-    private void turnToFace()
+    private void turnToFace(string moveDirection)
     {
-        if(playerManager.playerPosition.x < this.transform.position.x)
-        {
-            this.transform.rotation = Quaternion.Euler(0f, -180f, 0f);
-        }
-        else if(this.transform.position.x < playerManager.playerPosition.x)
+        if(moveDirection == "right")
         {
             this.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         }
+        else if(moveDirection == "left")
+        {
+            this.transform.rotation = Quaternion.Euler(0f, -180f, 0f);
+        }
     }
+
+    //When facing right Vector3.right and Vector3.left apply normally
+    //When facing left Vector3.right and Vector3.left flip
+    //An easy equivalency is to use .right as "positive towards x direction" and .left as the inverse
+
 
     private void OnTriggerEnter(Collider other)
     {
