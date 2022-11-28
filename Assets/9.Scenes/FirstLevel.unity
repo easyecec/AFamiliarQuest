@@ -18121,7 +18121,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 10, z: 2}
+  m_Size: {x: 10, y: 9.9, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &466513239
 MonoBehaviour:
@@ -18135,7 +18135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6bd214bef0d0c341ba90be957d314e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 478669964}
+  patrolLimit: {fileID: 466513238}
   currentAIState: 0
   cooldownTime: 1
   patrolRange: 0

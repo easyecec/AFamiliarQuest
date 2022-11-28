@@ -14,7 +14,7 @@ public class AI_Fairy : MonoBehaviour
 {
     PlayerManager playerManager;
 
-    [SerializeField] private Transform Target;
+    [SerializeField] private BoxCollider patrolLimit;
 
     //AI_State variables
 
@@ -70,7 +70,7 @@ public class AI_Fairy : MonoBehaviour
 
         cooldownTime = 2f;
         cooldownCounter = 0f;
-        patrolRange = 4.55f;
+        patrolRange = (patrolLimit.size.y / 2);
         fairySpeed = 3.2f;
 
         movePositive = true;
@@ -193,6 +193,16 @@ public class AI_Fairy : MonoBehaviour
                 {
                     if(playerInRangeX)
                     {
+                        //Turn to face player
+                        if (playerManager.playerPosition.x < this.transform.position.x)
+                        {
+                            turnToFace("left");
+                        }
+                        else
+                        {
+                            turnToFace("right");
+                        }
+
                         //Chase until position matches
                         if (!playerInAttackRange)
                         {
@@ -205,7 +215,6 @@ public class AI_Fairy : MonoBehaviour
                                 transform.Translate(Vector3.up * fairySpeed * Time.deltaTime);
                             }
                         }
-
                         //Attack
                         else
                         {
@@ -290,6 +299,18 @@ public class AI_Fairy : MonoBehaviour
                 }
 
                 break;
+        }
+    }
+
+    private void turnToFace(string moveDirection)
+    {
+        if (moveDirection == "right")
+        {
+            this.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+        }
+        else if (moveDirection == "left")
+        {
+            this.transform.rotation = Quaternion.Euler(0f, -180f, 0f);
         }
     }
 
