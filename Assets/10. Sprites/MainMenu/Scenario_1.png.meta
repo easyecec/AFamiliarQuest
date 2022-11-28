@@ -1,0 +1,804 @@
+fileFormatVersion: 2
+guid: 6bab33fbe32dcc04bbb4e2b08853bc3c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Scenario_1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4748
+        width: 1635
+        height: 2227
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a14424f75886d4945928cbe3ff6459b3
+      internalID: 820831769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scenario_1_1
+      rect:
+        serializedVersion: 2
+        x: 2255
+        y: 5802
+        width: 1445
+        height: 1173
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3a5e196ed47e704783314ed2944a37d
+      internalID: 708862884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scenario_1_2
+      rect:
+        serializedVersion: 2
+        x: 4054
+        y: 5802
+        width: 1446
+        height: 1173
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ead5ecaa3f7edb54ea264be495fff84f
+      internalID: 1882131034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scenario_1_3
+      rect:
+        serializedVersion: 2
+        x: 5601
+        y: 3007
+        width: 2697
+        height: 3967
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ab9ed1b141658d4c9ced279eed8b4ad
+      internalID: 695102742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scenario_1_4
+      rect:
+        serializedVersion: 2
+        x: 2761
+        y: 4943
+        width: 466
+        height: 632
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cac3f1a8f679c60429892a3b171b1b30
+      internalID: 162327184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scenario_1_5
+      rect:
+        serializedVersion: 2
+        x: 4529
+        y: 4943
+        width: 469
+        height: 632
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcf211d848defeb4bbaeca4a35364235
+      internalID: 1817792345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scenario_1_6
+      rect:
+        serializedVersion: 2
+        x: 2891
+        y: 4813
+        width: 142
+        height: 109
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9713cf9fd577adc4aa8ca484d58ce162
+      internalID: -1244900137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scenario_1_7
+      rect:
+        serializedVersion: 2
+        x: 3053
+        y: 4878
+        width: 44
+        height: 44
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7089a097915d14642886c5df0fcc2dd6
+      internalID: 1642493832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scenario_1_8
+      rect:
+        serializedVersion: 2
+        x: 4662
+        y: 4813
+        width: 141
+        height: 109
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a77e1992b075444586eabd134da82af
+      internalID: -725104404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scenario_1_9
+      rect:
+        serializedVersion: 2
+        x: 2956
+        y: 4716
+        width: 77
+        height: 76
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d2b6beeb710366469e9dd510ad4f960
+      internalID: -268163568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scenario_1_10
+      rect:
+        serializedVersion: 2
+        x: 3053
+        y: 4780
+        width: 44
+        height: 45
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36b6aefe0efe9ee49a2559c17500a4cf
+      internalID: 1183744957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scenario_1_11
+      rect:
+        serializedVersion: 2
+        x: 4726
+        y: 4716
+        width: 77
+        height: 76
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b903228e16a14843b31bb4f69aab32d
+      internalID: 429625482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scenario_1_12
+      rect:
+        serializedVersion: 2
+        x: 2956
+        y: 4651
+        width: 77
+        height: 44
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6dbee930cbeb084e96cddfd2aa3085e
+      internalID: 647560717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scenario_1_13
+      rect:
+        serializedVersion: 2
+        x: 4726
+        y: 4651
+        width: 77
+        height: 44
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1d20c2742ced6b4f92f2ee3c423ad39
+      internalID: 1381316013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scenario_1_14
+      rect:
+        serializedVersion: 2
+        x: 2988
+        y: 4558
+        width: 45
+        height: 44
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c193fccc17bfe6d47966eba0068f602e
+      internalID: -1986954250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scenario_1_15
+      rect:
+        serializedVersion: 2
+        x: 3997
+        y: 3362
+        width: 1532
+        height: 1281
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 713cf8d5081af494ea2d37f01802563e
+      internalID: 351299596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scenario_1_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2470
+        width: 1635
+        height: 2063
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75b9a7b324781a24f9f81a16412a8de9
+      internalID: -191677674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scenario_1_17
+      rect:
+        serializedVersion: 2
+        x: 2255
+        y: 3362
+        width: 1531
+        height: 1029
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85b301dca1ae71b40abf2a2b36a66fbb
+      internalID: 72040689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scenario_1_18
+      rect:
+        serializedVersion: 2
+        x: 2453
+        y: 3050
+        width: 77
+        height: 77
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 473d4ffacca8b584e959568a77ca8c22
+      internalID: 1211161577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scenario_1_19
+      rect:
+        serializedVersion: 2
+        x: 3342
+        y: 0
+        width: 1020
+        height: 3086
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc6e9a37238adf844b589d9841e9a780
+      internalID: 1356717998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scenario_1_20
+      rect:
+        serializedVersion: 2
+        x: 2453
+        y: 2855
+        width: 146
+        height: 81
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2bd27e99fa366748adf8fec0c8a38d5
+      internalID: -1665194411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scenario_1_21
+      rect:
+        serializedVersion: 2
+        x: 2320
+        y: 2588
+        width: 77
+        height: 77
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9870beef0d05f7d4bb21a3cd7d6ae62d
+      internalID: -1420899003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scenario_1_22
+      rect:
+        serializedVersion: 2
+        x: 2453
+        y: 2655
+        width: 146
+        height: 144
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3979f00d05aea1498150e6ce61b37a8
+      internalID: -86532281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scenario_1_23
+      rect:
+        serializedVersion: 2
+        x: 4722
+        y: 1550
+        width: 1034
+        height: 1123
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 161989d32df93d149a0e1913b29faf2f
+      internalID: 212474873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scenario_1_24
+      rect:
+        serializedVersion: 2
+        x: 7198
+        y: 1550
+        width: 1037
+        height: 1123
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c66e7b2406deaa41a770e028f3462c8
+      internalID: 1757658264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scenario_1_25
+      rect:
+        serializedVersion: 2
+        x: 2320
+        y: 2385
+        width: 77
+        height: 77
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3cb6f21581c4bf42916b5eab24f9547
+      internalID: 1844376971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scenario_1_26
+      rect:
+        serializedVersion: 2
+        x: 2453
+        y: 2385
+        width: 280
+        height: 214
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10cd3730eb50b2b479ca2b749278085d
+      internalID: -860519767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scenario_1_27
+      rect:
+        serializedVersion: 2
+        x: 5954
+        y: 1550
+        width: 1045
+        height: 1074
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3a471403227cc14fa038e0113b6c03a
+      internalID: -1438970814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scenario_1_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1635
+        height: 2061
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea629443f336b0444b6f0fda4ed18f01
+      internalID: 1543690761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scenario_1_29
+      rect:
+        serializedVersion: 2
+        x: 1963
+        y: 2
+        width: 1113
+        height: 2326
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bc8c5e13c7bb2a4c880fe95e0d0cf95
+      internalID: -1179703445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scenario_1_30
+      rect:
+        serializedVersion: 2
+        x: 4763
+        y: 0
+        width: 3535
+        height: 1391
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6f4b50854fc843428315dbf393c9082
+      internalID: 376966451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Scenario_1_2: 1882131034
+      Scenario_1_0: 820831769
+      Scenario_1_15: 351299596
+      Scenario_1_17: 72040689
+      Scenario_1_16: -191677674
+      Scenario_1_10: 1183744957
+      Scenario_1_27: -1438970814
+      Scenario_1_12: 647560717
+      Scenario_1_18: 1211161577
+      Scenario_1_26: -860519767
+      Scenario_1_29: -1179703445
+      Scenario_1_21: -1420899003
+      Scenario_1_6: -1244900137
+      Scenario_1_25: 1844376971
+      Scenario_1_5: 1817792345
+      Scenario_1_3: 695102742
+      Scenario_1_20: -1665194411
+      Scenario_1_30: 376966451
+      Scenario_1_13: 1381316013
+      Scenario_1_8: -725104404
+      Scenario_1_1: 708862884
+      Scenario_1_22: -86532281
+      Scenario_1_19: 1356717998
+      Scenario_1_24: 1757658264
+      Scenario_1_7: 1642493832
+      Scenario_1_9: -268163568
+      Scenario_1_14: -1986954250
+      Scenario_1_4: 162327184
+      Scenario_1_11: 429625482
+      Scenario_1_28: 1543690761
+      Scenario_1_23: 212474873
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

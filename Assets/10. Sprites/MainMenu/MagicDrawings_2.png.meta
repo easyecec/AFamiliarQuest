@@ -1,0 +1,1266 @@
+fileFormatVersion: 2
+guid: cae31f829c47a4b4b960c1d7918aa62f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MagicDrawings_2_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1458
+        width: 195
+        height: 310
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b15e343058c0a38429d697dd23fb2400
+      internalID: -628794574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_1
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 1485
+        width: 502
+        height: 283
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d11e0b0b4574cf47ac70082c2ee11b0
+      internalID: 677246787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_2
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 1593
+        width: 918
+        height: 175
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bd061bbc3e0c8e4ca2fddc16ffecadf
+      internalID: 355710417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_3
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 1335
+        width: 374
+        height: 315
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee2e03894b8f9d949a3eedc350cb2d50
+      internalID: 1384742130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_4
+      rect:
+        serializedVersion: 2
+        x: 1158
+        y: 1485
+        width: 358
+        height: 122
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 503d3818c32fb6540b8f9cc4a4c9355f
+      internalID: 1478773023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_5
+      rect:
+        serializedVersion: 2
+        x: 1847
+        y: 827
+        width: 104
+        height: 929
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dac288a475421349a168ae0d9da31da
+      internalID: -1185220200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_6
+      rect:
+        serializedVersion: 2
+        x: 2020
+        y: 1458
+        width: 366
+        height: 310
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 306940d59c9f43149a75de5584c88661
+      internalID: -681186309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1023
+        width: 265
+        height: 211
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38b2ababb3bd9074eb980a5f69d5699a
+      internalID: 273268540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_8
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 1168
+        width: 330
+        height: 239
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd95bb6a3cd5620439715d145838a8cb
+      internalID: 2082434146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_9
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 1150
+        width: 195
+        height: 212
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24edfa98489bf794c99e0a2cbdd50eda
+      internalID: -1554903095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_10
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 1132
+        width: 166
+        height: 320
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a206766b03b42d448b59b7b1ba1aa80
+      internalID: 1633797705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_11
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 1069
+        width: 121
+        height: 238
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47fa865d3f8181845b266c53475356cc
+      internalID: 477894898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_12
+      rect:
+        serializedVersion: 2
+        x: 1114
+        y: 1069
+        width: 112
+        height: 220
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97e61d1bf0b5c2a46a9ee691c6844704
+      internalID: -828199336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_13
+      rect:
+        serializedVersion: 2
+        x: 1313
+        y: 1069
+        width: 257
+        height: 348
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7637dae03b2d2534da4ae2081f899375
+      internalID: -664978064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_14
+      rect:
+        serializedVersion: 2
+        x: 1648
+        y: 1122
+        width: 140
+        height: 386
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0511b16d1949af54cb816b4f5f95383f
+      internalID: -958988664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_15
+      rect:
+        serializedVersion: 2
+        x: 2028
+        y: 842
+        width: 447
+        height: 557
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d75e12a6ccb4cac4f91baeb7d9849ed5
+      internalID: -846364373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_16
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 842
+        width: 549
+        height: 193
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1567ed534bebe6d488898167b58c112b
+      internalID: 535391394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_17
+      rect:
+        serializedVersion: 2
+        x: 1013
+        y: 832
+        width: 549
+        height: 168
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70d98a036313e6f45b92a385b1aa4df3
+      internalID: 2126300951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_18
+      rect:
+        serializedVersion: 2
+        x: 1738
+        y: 977
+        width: 14
+        height: 13
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 031e698680ba9ec4f996673be4a36230
+      internalID: -1782190571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_19
+      rect:
+        serializedVersion: 2
+        x: 1992
+        y: 624
+        width: 86
+        height: 384
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6e446b44c329a243aca38c0c29fe310
+      internalID: 186451653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_20
+      rect:
+        serializedVersion: 2
+        x: 1676
+        y: 960
+        width: 13
+        height: 12
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61c27f85ee1cc8140b4c3d6a46fbb0e9
+      internalID: 926978788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_21
+      rect:
+        serializedVersion: 2
+        x: 1720
+        y: 960
+        width: 14
+        height: 12
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 220f515be867d8642868e5d8e6322cdc
+      internalID: -1401428608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_22
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 932
+        width: 13
+        height: 14
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9ba47c20881df843ba13f13ae1a944d
+      internalID: -1713250641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_23
+      rect:
+        serializedVersion: 2
+        x: 1694
+        y: 932
+        width: 13
+        height: 14
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9f0fdabe3aa09d4a96e23f11bdecdab
+      internalID: -185681429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_24
+      rect:
+        serializedVersion: 2
+        x: 1775
+        y: 924
+        width: 13
+        height: 12
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5082502de207d643928bd2836ff576a
+      internalID: -1968581467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_25
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 534
+        width: 338
+        height: 384
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70cecc3aa7cead941843c2989a8dce70
+      internalID: -1594802283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_26
+      rect:
+        serializedVersion: 2
+        x: 1648
+        y: 914
+        width: 13
+        height: 13
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c8d975094fa20740a3d50edaf1ef5e4
+      internalID: -1891875970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_27
+      rect:
+        serializedVersion: 2
+        x: 1730
+        y: 914
+        width: 12
+        height: 13
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 486512392e62b514d9c55adfb8354ee7
+      internalID: -1915923220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_28
+      rect:
+        serializedVersion: 2
+        x: 1766
+        y: 905
+        width: 12
+        height: 13
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 935fa743cb4bcf84697f899380c24726
+      internalID: -1070280833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_29
+      rect:
+        serializedVersion: 2
+        x: 1676
+        y: 868
+        width: 13
+        height: 14
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af62b886017104d4a81942176884fc05
+      internalID: 930029686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_30
+      rect:
+        serializedVersion: 2
+        x: 1712
+        y: 679
+        width: 221
+        height: 221
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66c14d6b645f1cb428ed8b201eeb0f07
+      internalID: -2117614173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_31
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 534
+        width: 229
+        height: 321
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e529a26d8e1a6fa4490b7d21bb6b167d
+      internalID: 98547553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_32
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 850
+        width: 13
+        height: 13
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8787b5bc87263564b91e938d717b87a5
+      internalID: -1530402648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_33
+      rect:
+        serializedVersion: 2
+        x: 1648
+        y: 832
+        width: 13
+        height: 13
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f906c9b4d2c300a42872f93f20aa4884
+      internalID: 1534308566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_34
+      rect:
+        serializedVersion: 2
+        x: 1694
+        y: 832
+        width: 13
+        height: 13
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d0245548cf4d124abdae4211428f833
+      internalID: -564288872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_35
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 525
+        width: 211
+        height: 238
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 248b218c9fcbe4a43992f28b3b91a003
+      internalID: -1903547145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_36
+      rect:
+        serializedVersion: 2
+        x: 1013
+        y: 525
+        width: 249
+        height: 266
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fee57e477b0e12e43bdb2737035f737e
+      internalID: 1824475387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_37
+      rect:
+        serializedVersion: 2
+        x: 1313
+        y: 552
+        width: 112
+        height: 193
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aafacb62f90838448ba2c681acd1b56
+      internalID: 490774263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_38
+      rect:
+        serializedVersion: 2
+        x: 1476
+        y: 425
+        width: 157
+        height: 239
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18838da3b6eae464ca1774a259b4ec9e
+      internalID: 905994511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_39
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 389
+        width: 267
+        height: 311
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 610c390bf83b9a44aafd1ee55c7de041
+      internalID: -1410652850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_40
+      rect:
+        serializedVersion: 2
+        x: 2043
+        y: 442
+        width: 420
+        height: 321
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc2375fd756e9334eb4bd1edc0802d05
+      internalID: 1328113716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_41
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 443
+        width: 12
+        height: 12
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9174872a5b971c644843f72bc43cdd12
+      internalID: 1994788584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_42
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 451
+        width: 13
+        height: 14
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82bf0b4ede1d38946ab738e5f6070855
+      internalID: 1410372916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_43
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 443
+        width: 13
+        height: 12
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a92229e58ab527f4c9f52cee54836554
+      internalID: -1045568365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_44
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 451
+        width: 13
+        height: 14
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6772adcc473faee4c8d0777ad9cf9ee7
+      internalID: -1272772181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_45
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 8
+        width: 386
+        height: 521
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bf2e7346e2ad3444845461dbba21a22
+      internalID: 1582382116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_46
+      rect:
+        serializedVersion: 2
+        x: 1158
+        y: 26
+        width: 412
+        height: 475
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f79d3d480c509e4387383e9887086f7
+      internalID: -1248458739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_47
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 674
+        height: 447
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b36ac14ee2f5fa94bb2935ec91c6cac9
+      internalID: -1064778761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_48
+      rect:
+        serializedVersion: 2
+        x: 1676
+        y: 270
+        width: 158
+        height: 77
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0ec32c5a2dffc5458550d8dcca7b218
+      internalID: -1225581261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_49
+      rect:
+        serializedVersion: 2
+        x: 1857
+        y: 35
+        width: 221
+        height: 240
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b480f58a5504e04a95f7b6859b7afa5
+      internalID: -382063851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_50
+      rect:
+        serializedVersion: 2
+        x: 2129
+        y: 0
+        width: 346
+        height: 384
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42ed4ddc608c7f141b0fa5a474a2213d
+      internalID: -845062760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicDrawings_2_51
+      rect:
+        serializedVersion: 2
+        x: 1603
+        y: 0
+        width: 193
+        height: 202
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeba01c4e6ee88040b4d5e8ab4baccdd
+      internalID: 529748471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      MagicDrawings_2_4: 1478773023
+      MagicDrawings_2_39: -1410652850
+      MagicDrawings_2_45: 1582382116
+      MagicDrawings_2_33: 1534308566
+      MagicDrawings_2_48: -1225581261
+      MagicDrawings_2_29: 930029686
+      MagicDrawings_2_20: 926978788
+      MagicDrawings_2_28: -1070280833
+      MagicDrawings_2_7: 273268540
+      MagicDrawings_2_21: -1401428608
+      MagicDrawings_2_49: -382063851
+      MagicDrawings_2_1: 677246787
+      MagicDrawings_2_19: 186451653
+      MagicDrawings_2_34: -564288872
+      MagicDrawings_2_22: -1713250641
+      MagicDrawings_2_14: -958988664
+      MagicDrawings_2_6: -681186309
+      MagicDrawings_2_12: -828199336
+      MagicDrawings_2_24: -1968581467
+      MagicDrawings_2_0: -628794574
+      MagicDrawings_2_9: -1554903095
+      MagicDrawings_2_15: -846364373
+      MagicDrawings_2_38: 905994511
+      MagicDrawings_2_2: 355710417
+      MagicDrawings_2_47: -1064778761
+      MagicDrawings_2_16: 535391394
+      MagicDrawings_2_17: 2126300951
+      MagicDrawings_2_30: -2117614173
+      MagicDrawings_2_42: 1410372916
+      MagicDrawings_2_37: 490774263
+      MagicDrawings_2_8: 2082434146
+      MagicDrawings_2_32: -1530402648
+      MagicDrawings_2_27: -1915923220
+      MagicDrawings_2_26: -1891875970
+      MagicDrawings_2_5: -1185220200
+      MagicDrawings_2_40: 1328113716
+      MagicDrawings_2_25: -1594802283
+      MagicDrawings_2_10: 1633797705
+      MagicDrawings_2_23: -185681429
+      MagicDrawings_2_36: 1824475387
+      MagicDrawings_2_44: -1272772181
+      MagicDrawings_2_18: -1782190571
+      MagicDrawings_2_51: 529748471
+      MagicDrawings_2_11: 477894898
+      MagicDrawings_2_13: -664978064
+      MagicDrawings_2_31: 98547553
+      MagicDrawings_2_46: -1248458739
+      MagicDrawings_2_35: -1903547145
+      MagicDrawings_2_41: 1994788584
+      MagicDrawings_2_3: 1384742130
+      MagicDrawings_2_43: -1045568365
+      MagicDrawings_2_50: -845062760
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
