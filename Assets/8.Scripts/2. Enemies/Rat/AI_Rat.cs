@@ -202,7 +202,6 @@ public class AI_Rat : MonoBehaviour
                             else //If cooldown is set
                             {
                                 //Attacks player
-                                Debug.Log("Attacking");
 
                                 //Damage changes based on power-up effect
                                 if (playerManager.shielded)
@@ -236,14 +235,12 @@ public class AI_Rat : MonoBehaviour
                     else
                     {
                         currentAIState = AI_State_R.PATROLLING;
-                        Debug.Log("Patrolling");
                     }
                 }
                 //Patrol while player is out of line of sight
                 else
                 {
                     currentAIState = AI_State_R.PATROLLING;
-                    Debug.Log("Patrolling");
                 }
 
                 break;
@@ -273,7 +270,6 @@ public class AI_Rat : MonoBehaviour
         {
             canSeePlayer = true;
             catAnim = other.gameObject.GetComponentInChildren<Animator>();
-            Debug.Log("PlayerEnteredTheArea");
         }
     }
 
@@ -282,7 +278,6 @@ public class AI_Rat : MonoBehaviour
         if (other.tag == "Player")
         {
             canSeePlayer = false;
-            Debug.Log("PlayerExitedTheArea");
         }
     }
 }

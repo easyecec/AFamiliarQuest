@@ -175,7 +175,6 @@ public class AI_Fairy : MonoBehaviour
                     if (!playerInAttackRange && playerInRangeX && playerInRangeY)
                     {
                         currentAIState = AI_State_F.CHASING;
-                        fairyAnim.SetBool("Chasing", true);
                     }
                     else if(playerInAttackRange && playerInRangeX && playerInRangeY)
                     {
@@ -223,14 +222,12 @@ public class AI_Fairy : MonoBehaviour
                     else
                     {
                         currentAIState = AI_State_F.PATROLLING;
-                        fairyAnim.SetBool("Chasing", false);
                     }
 
                 }
                 else
                 {
                     currentAIState = AI_State_F.PATROLLING;
-                    fairyAnim.SetBool("Chasing", false);
                 }
 
                 break;
@@ -254,7 +251,6 @@ public class AI_Fairy : MonoBehaviour
                             else //If cooldown is set
                             {
                                 //Attacks player
-                                Debug.Log("Attacking");
 
                                 //Damage changes based on power-up effect
                                 if (playerManager.shielded)
@@ -319,7 +315,6 @@ public class AI_Fairy : MonoBehaviour
         {
             canSeePlayer = true;
             catAnim = other.gameObject.GetComponentInChildren<Animator>();
-            Debug.Log("PlayerEnteredTheArea");
         }
     }
 
@@ -328,7 +323,6 @@ public class AI_Fairy : MonoBehaviour
         if (other.tag == "Player")
         {
             canSeePlayer = false;
-            Debug.Log("PlayerExitedTheArea");
         }
     }
 
