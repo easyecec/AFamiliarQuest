@@ -16,8 +16,7 @@ public class PlayerController : MonoBehaviour
     PlayerManager playerManager;
 
     private Vector3 direction;
-    private bool isGrounded;
-    private bool jumping;
+    [SerializeField] private bool isGrounded;
 
     public bool doubleJump = false;
 
@@ -70,7 +69,7 @@ public class PlayerController : MonoBehaviour
             if (isGrounded)
             {
                 direction.y = jumpForce;
-                catAnim.SetBool("Jumping", true);
+                catAnim.SetTrigger("Jumping");
                 doubleJump = true;
             }
 
@@ -80,11 +79,7 @@ public class PlayerController : MonoBehaviour
                 {
                     direction.y = jumpForce;
                     doubleJump = false;
-                }
-
-                else
-                {
-                    catAnim.SetBool("Jumping", false);
+                    catAnim.SetTrigger("Jumping");
                 }
             }
         }

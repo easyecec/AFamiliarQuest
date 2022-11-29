@@ -8,8 +8,7 @@ using Unity.VisualScripting;
 public class PlayerManager : MonoBehaviour
 {
     private Animator playerAnim;
-    [SerializeField] private TextMeshProUGUI coinAmount;
-    [SerializeField] private TextMeshProUGUI livesLeft;
+
     [SerializeField] private int lives;
     [SerializeField] private int coins;
     [SerializeField] private float deadTime;
