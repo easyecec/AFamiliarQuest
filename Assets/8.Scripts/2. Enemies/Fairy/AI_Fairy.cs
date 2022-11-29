@@ -169,7 +169,6 @@ public class AI_Fairy : MonoBehaviour
                             }
                         }
                     }
-                    Debug.Log("Patrolling");
                 }
                 else
                 {   

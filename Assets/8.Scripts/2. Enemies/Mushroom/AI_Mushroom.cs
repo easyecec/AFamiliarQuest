@@ -20,8 +20,9 @@ public class AI_Mushroom : MonoBehaviour
 
     [SerializeField] private float cooldownTime = 2f; //Time between each attack
 
-    //Stores the player animator
+    //Stores the animators
     [SerializeField] private Animator catAnim;
+    [SerializeField] private Animator mushroomAnim;
 
     [SerializeField] private bool canSeePlayer;
 
@@ -30,6 +31,7 @@ public class AI_Mushroom : MonoBehaviour
     void Awake()
     {
         playerManager = GameObject.Find("Player").GetComponent<PlayerManager>();
+        mushroomAnim = gameObject.GetComponentInChildren<Animator>();
         cooldownCounter = cooldownTime;
     }
 
@@ -51,7 +53,6 @@ public class AI_Mushroom : MonoBehaviour
                 {
                     currentAIState = AI_State_M.CHARGING;
                     cooldownCounter = cooldownTime;
-                    Debug.Log("Charging");
                 }
 
                 break;
@@ -77,17 +78,18 @@ public class AI_Mushroom : MonoBehaviour
                     if (playerManager.playerDead == false)
                     {
                         //Attacks player
-                        Debug.Log("Attacking");
 
                         if(playerManager.shielded)
                         {
-                            playerManager.tempHitPoints -= 1;
-                            catAnim.SetTrigger("Damaged");
+
+                            //StartCoroutine(DamageDelay());
+                            //playerManager.tempHitPoints -= 1;
+                            mushroomAnim.SetTrigger("Attacking");
                         }
                         else
                         {
-                            playerManager.Lives -= 1;
-                            catAnim.SetTrigger("Damaged");
+                            StartCoroutine(DamageDelay());
+                            mushroomAnim.SetTrigger("Attacking");
                         }
                             
                         this.cooldownCounter = cooldownTime;
@@ -99,14 +101,12 @@ public class AI_Mushroom : MonoBehaviour
                     {
                         this.cooldownCounter = cooldownTime;
                         currentAIState = AI_State_M.IDLE;
-                        Debug.Log("Idle");
                     }
                 }
 
                 else
                 {
                     currentAIState = AI_State_M.IDLE;
-                    Debug.Log("Idle");
                 }
 
                 break;    
@@ -119,7 +119,7 @@ public class AI_Mushroom : MonoBehaviour
             {
                 canSeePlayer = true;
                 catAnim = other.gameObject.GetComponentInChildren<Animator>();
-                Debug.Log("PlayerEnteredTheArea");
+                mushroomAnim.SetBool("Charging", true);
             }
         
     }
@@ -129,8 +129,18 @@ public class AI_Mushroom : MonoBehaviour
         if (other.tag == "Player")
             {
                 canSeePlayer = false;
-                Debug.Log("PlayerExitedTheArea");
+                mushroomAnim.SetBool("Charging", false);
             }
+    }
+
+    IEnumerator DamageDelay()
+    {
+
+        //Wait for 2 seconds
+        yield return new WaitForSeconds(1);
+        catAnim.SetTrigger("Damaged");
+        playerManager.Lives -= 1;
+
     }
 
 }

@@ -127,7 +127,6 @@ public class AI_Rat : MonoBehaviour
                             this.movePositive = true;
                         }
                     }
-                    Debug.Log("Patrolling");
                 }
                 else
                 {
