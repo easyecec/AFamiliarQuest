@@ -3,18 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using Fusion;
 
-[CreateAssetMenu(menuName = "5. Scriptable Objects/CreateGameSettings", fileName ="GameSettings")]
+[CreateAssetMenu(menuName = "ScriptableObjects/CreateGameSettings", fileName ="GameSettings")]
 public class StartGameSettings : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameMode gameMode;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public Vector3 spawnPosition;
+
 }
