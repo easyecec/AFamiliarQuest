@@ -52,9 +52,9 @@ public class AI_Rat : MonoBehaviour
     //Starting position values taken for reference
     [SerializeField] private float startX;
     [SerializeField] private float startY;
-    [SerializeField] private float startZ;
+    [SerializeField] private float yOffset = 0.2f;
 
-    [SerializeField] private bool movePositive; // Decides whether the fairy moves up or down
+    [SerializeField] private bool movePositive; // Decides whether the snake moves left or right
 
     //Stores the animators
     [SerializeField] private Animator catAnim;
@@ -62,8 +62,8 @@ public class AI_Rat : MonoBehaviour
 
     void Awake()
     {
-        playerManager = GameObject.Find("Player").GetComponent<PlayerManager>();
         snakeAnim = gameObject.GetComponentInChildren<Animator>();
+        playerManager = GameObject.Find("Player").GetComponent<PlayerManager>();
 
         cooldownTime = 2f;
         cooldownCounter = 0f;
@@ -73,7 +73,6 @@ public class AI_Rat : MonoBehaviour
 
         startX = this.transform.position.x;
         startY = this.transform.position.y;
-        startZ = this.transform.position.z;
 
         upperLimitX = startX + patrolRange;
         lowerLimitX = startX - patrolRange;
@@ -85,8 +84,9 @@ public class AI_Rat : MonoBehaviour
     void Update()
     {
         playerInRangeX = (lowerLimitX < playerManager.playerPosition.x) && (playerManager.playerPosition.x < upperLimitX);
-        playerInRangeY = (startY - 0.2 < playerManager.playerPosition.y) && (playerManager.playerPosition.y < startY+0.2);
+        playerInRangeY = (startY - yOffset < playerManager.playerPosition.y) && (playerManager.playerPosition.y < startY + yOffset);
         playerInAttackRange = (playerManager.playerPosition.x - attackRange < this.transform.position.x) && (this.transform.position.x < playerManager.playerPosition.x + attackRange);
+
         enemyStates();
     }
 
@@ -133,10 +133,12 @@ public class AI_Rat : MonoBehaviour
                     if (!playerInAttackRange && playerInRangeX && playerInRangeY)
                     {
                         currentAIState = AI_State_R.CHASING;
+                        Debug.Log("Chasing");
                     }
                     else if (playerInAttackRange && playerInRangeX && playerInRangeY)
                     {
                         currentAIState = AI_State_R.ATTACKING;
+                        Debug.Log("Attacking");
                     }
 
                 }
@@ -168,17 +170,20 @@ public class AI_Rat : MonoBehaviour
                         else
                         {
                             currentAIState = AI_State_R.ATTACKING;
+                            Debug.Log("Attacking");
                         }
                     }
                     else
                     {
                         currentAIState= AI_State_R.CHASING;
+                        Debug.Log("Chasing");
                     }
 
                 }
                 else
                 {
                     currentAIState = AI_State_R.PATROLLING;
+                    Debug.Log("Patrolling");
                 }
 
                 break;
@@ -228,6 +233,7 @@ public class AI_Rat : MonoBehaviour
                         else
                         {
                             currentAIState = AI_State_R.CHASING;
+                            Debug.Log("Chasing");
                         }
 
                     }
@@ -235,12 +241,14 @@ public class AI_Rat : MonoBehaviour
                     else
                     {
                         currentAIState = AI_State_R.PATROLLING;
+                        Debug.Log("Patrolling");
                     }
                 }
                 //Patrol while player is out of line of sight
                 else
                 {
                     currentAIState = AI_State_R.PATROLLING;
+                    Debug.Log("Patrolling");
                 }
 
                 break;
@@ -266,9 +274,12 @@ public class AI_Rat : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
+            Debug.Log("PlayerEnteredTheArea");
+
             canSeePlayer = true;
+            playerManager = other.gameObject.GetComponent<PlayerManager>();
             catAnim = other.gameObject.GetComponentInChildren<Animator>();
         }
     }
@@ -277,6 +288,8 @@ public class AI_Rat : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("PlayerExitedTheArea");
+
             canSeePlayer = false;
         }
     }
