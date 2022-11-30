@@ -6,15 +6,12 @@ public class WizardHatPowerUp : MonoBehaviour
 {
     PlayerManager playerManager;
 
-    void Awake()
-    {
-        playerManager = GameObject.Find("Player").GetComponent<PlayerManager>();
-    }
-
     private void OnTriggerEnter(Collider other)
     {
+        playerManager = other.gameObject.GetComponent<PlayerManager>();
+
         playerManager.Lives = 9;
-        playerManager.tempHitPoints=9;
+        playerManager.TempHitPoints = 5;
         Destroy(gameObject);
     }
 }

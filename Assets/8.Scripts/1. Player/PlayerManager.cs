@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
-using TMPro;
 using Unity.VisualScripting;
 
 public class PlayerManager : MonoBehaviour
@@ -12,7 +11,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private int lives;
     [SerializeField] private int coins;
     [SerializeField] private float deadTime;
-    public int tempHitPoints;
+    [SerializeField] private int tempHitPoints;
     public bool shielded;
     public bool playerDead = false;
     public Vector3 playerPosition;
@@ -27,6 +26,12 @@ public class PlayerManager : MonoBehaviour
     {
         get { return coins; }
         set { coins = value; }
+    }
+
+    public int TempHitPoints
+    {
+        get { return tempHitPoints; }
+        set { tempHitPoints = value; }
     }
 
 
@@ -48,7 +53,9 @@ public class PlayerManager : MonoBehaviour
         livesLeft.text = lives.ToString(); */
 
         Dead();
-        OnDeath();
+        OnDeath(); 
+        MageArmor();
+
         playerPosition = this.transform.position;
     }
 
@@ -90,12 +97,12 @@ public class PlayerManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "WorldFalling")
+        if (other.CompareTag("WorldFalling"))
         {
             lives = 0;
         }
 
-        else if(other.tag == "LevelCompleted")
+        else if(other.CompareTag("LevelCompleted"))
         {
             SceneManager.LoadScene("LevelCompletedScreen");
         }

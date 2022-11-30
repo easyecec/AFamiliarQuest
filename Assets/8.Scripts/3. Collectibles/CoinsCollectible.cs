@@ -6,15 +6,12 @@ public class CoinsCollectible : MonoBehaviour
 {
     PlayerManager playerManager;
 
-    void Awake()
-    {
-        playerManager = GameObject.Find("Player").GetComponent<PlayerManager>();
-    }
-
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
+            playerManager = other.gameObject.GetComponent<PlayerManager>();
+
             playerManager.Coins += 1;
             Destroy(gameObject);
         }

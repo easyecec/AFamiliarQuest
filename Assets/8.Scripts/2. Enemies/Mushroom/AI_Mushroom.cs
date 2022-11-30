@@ -82,13 +82,12 @@ public class AI_Mushroom : MonoBehaviour
                         if(playerManager.shielded)
                         {
 
-                            //StartCoroutine(DamageDelay());
-                            //playerManager.tempHitPoints -= 1;
+                            StartCoroutine(DamageDelayHealthShield());
                             mushroomAnim.SetTrigger("Attacking");
                         }
                         else
                         {
-                            StartCoroutine(DamageDelay());
+                            StartCoroutine(DamageDelayHealth());
                             mushroomAnim.SetTrigger("Attacking");
                         }
                             
@@ -115,7 +114,7 @@ public class AI_Mushroom : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
             {
                 canSeePlayer = true;
                 catAnim = other.gameObject.GetComponentInChildren<Animator>();
@@ -126,20 +125,30 @@ public class AI_Mushroom : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
             {
                 canSeePlayer = false;
                 mushroomAnim.SetBool("Charging", false);
             }
     }
 
-    IEnumerator DamageDelay()
+    IEnumerator DamageDelayHealth()
     {
 
         //Wait for 2 seconds
         yield return new WaitForSeconds(1);
         catAnim.SetTrigger("Damaged");
         playerManager.Lives -= 1;
+
+    }
+
+    IEnumerator DamageDelayHealthShield()
+    {
+
+        //Wait for 2 seconds
+        yield return new WaitForSeconds(1);
+        catAnim.SetTrigger("Damaged");
+        playerManager.TempHitPoints -= 1;
 
     }
 

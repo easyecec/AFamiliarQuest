@@ -255,7 +255,7 @@ public class AI_Fairy : MonoBehaviour
                                 //Damage changes based on power-up effect
                                 if (playerManager.shielded)
                                 {
-                                    playerManager.tempHitPoints -= 1;
+                                    playerManager.TempHitPoints -= 1;
 
                                     fairyAnim.SetTrigger("Attack");
                                     catAnim.SetTrigger("Damaged");
@@ -311,7 +311,7 @@ public class AI_Fairy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
             canSeePlayer = true;
             catAnim = other.gameObject.GetComponentInChildren<Animator>();
@@ -320,7 +320,7 @@ public class AI_Fairy : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
             canSeePlayer = false;
         }

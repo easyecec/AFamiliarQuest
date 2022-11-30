@@ -206,7 +206,7 @@ public class AI_Rat : MonoBehaviour
                                 //Damage changes based on power-up effect
                                 if (playerManager.shielded)
                                 {
-                                    playerManager.tempHitPoints -= 1;
+                                    playerManager.TempHitPoints -= 1;
 
                                     //Animations
                                     catAnim.SetTrigger("Damaged");
@@ -275,7 +275,7 @@ public class AI_Rat : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
             canSeePlayer = false;
         }

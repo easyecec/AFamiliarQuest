@@ -192,9 +192,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3817
-        y: 0
+        y: 1551
         width: 4012
-        height: 3099
+        height: 1548
       alignment: 1
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -212,8 +212,8 @@ TextureImporter:
       name: Botones_3_5
       rect:
         serializedVersion: 2
-        x: 4364
-        y: 0
+        x: 4372
+        y: 8
         width: 2832
         height: 1463
       alignment: 1
