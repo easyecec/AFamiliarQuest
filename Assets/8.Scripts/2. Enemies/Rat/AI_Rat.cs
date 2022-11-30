@@ -133,12 +133,10 @@ public class AI_Rat : MonoBehaviour
                     if (!playerInAttackRange && playerInRangeX && playerInRangeY)
                     {
                         currentAIState = AI_State_R.CHASING;
-                        Debug.Log("Chasing");
                     }
                     else if (playerInAttackRange && playerInRangeX && playerInRangeY)
                     {
                         currentAIState = AI_State_R.ATTACKING;
-                        Debug.Log("Attacking");
                     }
 
                 }
@@ -170,20 +168,17 @@ public class AI_Rat : MonoBehaviour
                         else
                         {
                             currentAIState = AI_State_R.ATTACKING;
-                            Debug.Log("Attacking");
                         }
                     }
                     else
                     {
                         currentAIState= AI_State_R.CHASING;
-                        Debug.Log("Chasing");
                     }
 
                 }
                 else
                 {
                     currentAIState = AI_State_R.PATROLLING;
-                    Debug.Log("Patrolling");
                 }
 
                 break;
@@ -233,7 +228,6 @@ public class AI_Rat : MonoBehaviour
                         else
                         {
                             currentAIState = AI_State_R.CHASING;
-                            Debug.Log("Chasing");
                         }
 
                     }
@@ -241,14 +235,12 @@ public class AI_Rat : MonoBehaviour
                     else
                     {
                         currentAIState = AI_State_R.PATROLLING;
-                        Debug.Log("Patrolling");
                     }
                 }
                 //Patrol while player is out of line of sight
                 else
                 {
                     currentAIState = AI_State_R.PATROLLING;
-                    Debug.Log("Patrolling");
                 }
 
                 break;
@@ -276,7 +268,6 @@ public class AI_Rat : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("PlayerEnteredTheArea");
 
             canSeePlayer = true;
             playerManager = other.gameObject.GetComponent<PlayerManager>();
@@ -288,7 +279,6 @@ public class AI_Rat : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("PlayerExitedTheArea");
 
             canSeePlayer = false;
         }

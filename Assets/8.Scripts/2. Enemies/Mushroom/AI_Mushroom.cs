@@ -18,7 +18,7 @@ public class AI_Mushroom : MonoBehaviour
 
     [SerializeField] private AI_State_M currentAIState; //Saves the current enum value (current state)
 
-    [SerializeField] private float cooldownTime = 2f; //Time between each attack
+    [SerializeField] private float cooldownTime = 2.5f; //Time between each attack
 
     //Stores the animators
     [SerializeField] private Animator catAnim;
@@ -38,6 +38,8 @@ public class AI_Mushroom : MonoBehaviour
     void Update()
     {
         enemyStates();
+
+        //Debug.Log(cooldownCounter);
     }
 
 
@@ -49,7 +51,7 @@ public class AI_Mushroom : MonoBehaviour
         {
             case AI_State_M.IDLE:
 
-                if (canSeePlayer == true)
+                if (canSeePlayer)
                 {
                     currentAIState = AI_State_M.CHARGING;
                     cooldownCounter = cooldownTime;
@@ -73,9 +75,9 @@ public class AI_Mushroom : MonoBehaviour
 
             case AI_State_M.ATTACKING:
 
-                if (canSeePlayer == true)
+                if (canSeePlayer)
                 {
-                    if (playerManager.playerDead == false)
+                    if (!playerManager.playerDead)
                     {
                         //Attacks player
 
@@ -129,7 +131,8 @@ public class AI_Mushroom : MonoBehaviour
             {
                 canSeePlayer = false;
                 mushroomAnim.SetBool("Charging", false);
-            }
+                cooldownCounter = cooldownTime;
+        }
     }
 
     IEnumerator DamageDelayHealth()
