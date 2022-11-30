@@ -52,7 +52,7 @@ public class AI_Rat : MonoBehaviour
     //Starting position values taken for reference
     [SerializeField] private float startX;
     [SerializeField] private float startY;
-    [SerializeField] private float yOffset = 0.2f;
+    [SerializeField] private float yOffset = 1.2f;
 
     [SerializeField] private bool movePositive; // Decides whether the snake moves left or right
 
