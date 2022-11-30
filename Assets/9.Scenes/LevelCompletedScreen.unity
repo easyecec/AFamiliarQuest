@@ -883,7 +883,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1259342966
 GameObject:
@@ -1288,6 +1288,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1855560643}
   - component: {fileID: 1855560642}
+  - component: {fileID: 1855560644}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1320,8 +1321,28 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1855560644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855560641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4887ebbe72ad7249bc95f284a05c93b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hats:
+  - {fileID: 99464734}
+  - {fileID: 929029634}
+  - {fileID: 903771439}
+  fullHat: {fileID: 21300000, guid: bbc02cb567247d44286d4ef21bcb2a8f, type: 3}
+  emptyHat: {fileID: 21300000, guid: 6de13f65071ba2948a4e169009cf68fc, type: 3}
+  pointManager: {fileID: 0}
+  pointsAmount: {fileID: 1406343866}
 --- !u!1 &1995363025
 GameObject:
   m_ObjectHideFlags: 0
@@ -1419,7 +1440,7 @@ RectTransform:
   - {fileID: 751757897}
   - {fileID: 245369749}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1625,7 +1646,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2076155006
 GameObject:
