@@ -90,14 +90,6 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
-
-        else
-        {
-            if (isGrounded)
-            {
-                
-            }
-        }
     }
 
 }
