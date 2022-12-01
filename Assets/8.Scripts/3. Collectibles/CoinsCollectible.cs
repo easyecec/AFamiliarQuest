@@ -12,6 +12,8 @@ public class CoinsCollectible : MonoBehaviour
         {
             playerManager = other.gameObject.GetComponent<PlayerManager>();
 
+            FindObjectOfType<AudioManager>().Play("Coin");
+
             playerManager.Coins += 1;
             Destroy(gameObject);
         }
