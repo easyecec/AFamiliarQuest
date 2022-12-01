@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Animator catAnim;
 
+    [SerializeField] private int terminalVelocity = -25;
+
     PlayerManager playerManager;
 
     private Vector3 direction;
@@ -33,6 +35,11 @@ public class PlayerController : MonoBehaviour
         {
             MovePlayer();
             Jump();
+        }
+
+        if(direction.y <= terminalVelocity)
+        {
+            direction.y = terminalVelocity;
         }
     }
 
@@ -81,6 +88,14 @@ public class PlayerController : MonoBehaviour
                     doubleJump = false;
                     catAnim.SetTrigger("Jumping");
                 }
+            }
+        }
+
+        else
+        {
+            if (isGrounded)
+            {
+                
             }
         }
     }
