@@ -5,7 +5,7 @@ using System;
 public class AudioManager : MonoBehaviour
 {
 
-    public Sound[] sounds;
+    [SerializeField] private Sound[] sounds;
 
     public static AudioManager instance;
 
@@ -26,13 +26,18 @@ public class AudioManager : MonoBehaviour
 
         foreach (Sound s in sounds)
         {
-            s.audioSource = gameObject.AddComponent<AudioSource>();
-            s.audioSource.clip = s.clip;
+            s.source = gameObject.AddComponent<AudioSource>();
+            s.source.clip = s.clip;
 
-            s.audioSource.volume = s.volume;
-            s.audioSource.pitch = s.pitch;
-            s.audioSource.loop = s.loop;
+            s.source.volume = s.volume;
+            s.source.pitch = s.pitch;
+            s.source.loop = s.loop;
         }
+    }
+
+    private void Start()
+    {
+        Play("Theme");
     }
 
     public void Play (string name)
@@ -44,6 +49,6 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Sound: " + name + " not found!");
             return;
         }
-        s.audioSource.Play();
+        s.source.Play();
     }
 }

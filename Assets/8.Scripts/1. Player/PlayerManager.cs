@@ -34,6 +34,12 @@ public class PlayerManager : MonoBehaviour
         set { tempHitPoints = value; }
     }
 
+    private void Awake()
+    {
+        coins = 0;
+        lives = 9;
+        tempHitPoints = 0;
+    }
 
     void Start()
     {

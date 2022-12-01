@@ -12,6 +12,11 @@ public class CountDownTimer : MonoBehaviour
 
     PlayerManager playerManager;
 
+    public float TimeLeft
+    {
+        get { return timer; }
+    }
+
     void Start()
     {
         ResetTimer();
@@ -22,7 +27,8 @@ public class CountDownTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(timer > 0)
+
+        if (timer > 0)
         {
             timer -= Time.deltaTime;
             UpdateTimerDisplay(timer);
