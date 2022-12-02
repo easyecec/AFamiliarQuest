@@ -45,6 +45,7 @@ public class StartNetworkGame : MonoBehaviour, INetworkRunnerCallbacks
 
     public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
     {
+        /*
         if (runner.IsServer)
         {
             Debug.Log("Connected as Host");
@@ -55,6 +56,9 @@ public class StartNetworkGame : MonoBehaviour, INetworkRunnerCallbacks
             Debug.Log("Connected as Client");
             OnPlayerJoinedEvent?.Invoke(runner, player);
         }
+        */
+
+        OnPlayerJoinedEvent?.Invoke(runner, player);
     }
 
     public void OnPlayerLeft(NetworkRunner runner, PlayerRef player)
@@ -64,7 +68,8 @@ public class StartNetworkGame : MonoBehaviour, INetworkRunnerCallbacks
 
     public void OnInput(NetworkRunner runner, NetworkInput input)
     {
-
+        Input.GetAxis("Horizontal");
+        Input.GetButtonDown("Jump");
     }
 
     public void OnInputMissing(NetworkRunner runner, PlayerRef player, NetworkInput input)
