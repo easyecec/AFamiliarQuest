@@ -12,7 +12,7 @@ public class StartNetworkGame : MonoBehaviour, INetworkRunnerCallbacks
     [SerializeField] private NetworkRunner _networkRunner;
     [SerializeField] private string _roomName;
     [SerializeField] private string _sceneName;
-    private UnityEvent<NetworkRunner, PlayerRef> OnPlayerJoinedEvent;
+    [SerializeField] private UnityEvent<NetworkRunner, PlayerRef> OnPlayerJoinedEvent;
     [SerializeField] private StartGameSettings _playerSpawnSettings;
 
     private void Awake()

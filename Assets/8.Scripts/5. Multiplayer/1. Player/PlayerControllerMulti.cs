@@ -18,7 +18,7 @@ public class PlayerControllerMulti : MonoBehaviour
 
     [SerializeField] private int terminalVelocity = -25;
 
-    PlayerManager playerManager;
+    PlayerManagerMulty playerManager;
 
     private Vector3 direction;
     [SerializeField] private bool isGrounded;
@@ -27,24 +27,25 @@ public class PlayerControllerMulti : MonoBehaviour
 
     //Camera values
     Camera playerCamera;
-    [SerializeField] private float followSpeed = 2f;
-    [SerializeField] private float yOffset = 0.3f;
-    [SerializeField] private float xOffset = 7f;
-    [SerializeField] private float zOffset = -10f;
+    [SerializeField] private float followSpeed = 2.5f;
+    [SerializeField] private float yOffset = 0f;
+    [SerializeField] private float xOffset = 1f;
+    [SerializeField] private float zOffset = -14f;
 
     void Awake()
     {
-        playerManager = gameObject.GetComponent<PlayerManager>();
+        playerManager = gameObject.GetComponent<PlayerManagerMulty>();
         catAnim = gameObject.GetComponentInChildren<Animator>();
         playerCamera = Camera.main;
     }
 
     void Update()
     {
-        if (!playerManager.playerDead)
+        if (!playerManager.PlayerDead)
         {
             MovePlayer();
             Jump();
+            CameraMovement();
         }
 
         if (direction.y <= terminalVelocity)
