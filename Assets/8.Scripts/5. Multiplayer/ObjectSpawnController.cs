@@ -28,4 +28,6 @@ public class ObjectSpawnController : MonoBehaviour
         _spawnedObjects.Add(playerRef, _object);
         Debug.Log($" {_spawnedObjects.Count} objects in simulation. ");
     }
+
+
 }

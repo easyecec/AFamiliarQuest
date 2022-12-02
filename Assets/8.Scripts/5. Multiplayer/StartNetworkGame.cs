@@ -13,11 +13,17 @@ public class StartNetworkGame : MonoBehaviour, INetworkRunnerCallbacks
     [SerializeField] private string _roomName;
     [SerializeField] private string _sceneName;
     private UnityEvent<NetworkRunner, PlayerRef> OnPlayerJoinedEvent;
-    async void StartNewGame(GameMode mode)
+    [SerializeField] private StartGameSettings _playerSpawnSettings;
+
+    private void Awake()
+    {
+        StartNewGame();
+    }
+    async void StartNewGame()
     {
         await _networkRunner.StartGame(new StartGameArgs()
         {
-            GameMode = mode,
+            GameMode = _playerSpawnSettings.gameMode,
             SessionName = _roomName,
             Scene = SceneManager.GetActiveScene().buildIndex,
             SceneManager = gameObject.AddComponent<NetworkSceneManagerDefault>()
@@ -25,6 +31,7 @@ public class StartNetworkGame : MonoBehaviour, INetworkRunnerCallbacks
         _networkRunner.SetActiveScene(_sceneName);
     }
 
+    /*
     public void StartGameAsHost()
     {
         StartNewGame(GameMode.AutoHostOrClient);
@@ -34,6 +41,7 @@ public class StartNetworkGame : MonoBehaviour, INetworkRunnerCallbacks
     {
         StartNewGame(GameMode.Client);
     }
+    */
 
     public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
     {
@@ -50,6 +58,7 @@ public class StartNetworkGame : MonoBehaviour, INetworkRunnerCallbacks
 
     public void OnPlayerLeft(NetworkRunner runner, PlayerRef player)
     {
+
     }
 
     public void OnInput(NetworkRunner runner, NetworkInput input)
