@@ -1335,13 +1335,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4887ebbe72ad7249bc95f284a05c93b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreSO: {fileID: 11400000, guid: 620d1e110d78edf41ad49e91a5e5549a, type: 2}
   hats:
   - {fileID: 99464734}
   - {fileID: 929029634}
   - {fileID: 903771439}
   fullHat: {fileID: 21300000, guid: bbc02cb567247d44286d4ef21bcb2a8f, type: 3}
   emptyHat: {fileID: 21300000, guid: 6de13f65071ba2948a4e169009cf68fc, type: 3}
-  pointManager: {fileID: 0}
   pointsAmount: {fileID: 1406343866}
 --- !u!1 &1995363025
 GameObject:

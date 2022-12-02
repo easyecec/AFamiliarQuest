@@ -8,6 +8,8 @@ public class PointManager : MonoBehaviour
     PlayerManager playerManager;
     CountDownTimer timer;
 
+    [SerializeField] private ScoreStore scoreSO;
+
     [SerializeField] private int coinPoints;
     [SerializeField] private int lifePoints;
     [SerializeField] private int shieldPoints;
@@ -26,28 +28,10 @@ public class PointManager : MonoBehaviour
         get { return hats; }
     }
 
-    public static PointManager instance;
-
-    void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        DontDestroyOnLoad(gameObject);
-
-        timer = GameObject.Find("LevelManager").GetComponent<CountDownTimer>();
-    }
-
     private void Start()
     {
         playerManager = GameObject.Find("Player").GetComponent<PlayerManager>();
+        timer = GameObject.Find("LevelManager").GetComponent<CountDownTimer>();
     }
 
     private void Update()
@@ -80,5 +64,8 @@ public class PointManager : MonoBehaviour
         {
             hats = 3;
         }
+
+        scoreSO.Hats = hats;
+        scoreSO.Score = points;
     }
 }

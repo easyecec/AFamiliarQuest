@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class PointsDisplay : MonoBehaviour
 {
+
+    [SerializeField] private ScoreStore scoreSO;
+
     //Hats - Amount
 
     private int hatNumber = 3;
@@ -13,21 +16,15 @@ public class PointsDisplay : MonoBehaviour
     [SerializeField] private Sprite fullHat;
     [SerializeField] private Sprite emptyHat;
 
-    [SerializeField] PointManager pointManager;
 
     //Score - Number
     [SerializeField] private Text pointsAmount;
 
-    void Awake()
-    {
-        pointManager = GameObject.Find("PointManager").GetComponent<PointManager>();
-    }
-
     void Update()
     {
-        pointsAmount.text = pointManager.Points.ToString();
+        pointsAmount.text = scoreSO.Score.ToString();
 
-        hatNumber = pointManager.Hats;
+        hatNumber = scoreSO.Hats;
 
         for (int i = 0; i < hats.Length; i++)
         {
