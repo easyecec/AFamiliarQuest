@@ -68,8 +68,7 @@ public class StartNetworkGame : MonoBehaviour, INetworkRunnerCallbacks
 
     public void OnInput(NetworkRunner runner, NetworkInput input)
     {
-        Input.GetAxis("Horizontal");
-        Input.GetButtonDown("Jump");
+
     }
 
     public void OnInputMissing(NetworkRunner runner, PlayerRef player, NetworkInput input)
