@@ -8,7 +8,7 @@ public class PlayerControllerMulti : NetworkBehaviour
 {
 
     // Player values
-    [SerializeField] private CharacterController controller;
+    [SerializeField] private NetworkCharacterControllerPrototype controller;
     [SerializeField] private float speed = 8;
     [SerializeField] private float jumpForce = 10;
     [SerializeField] private float gravity = -20;
@@ -35,6 +35,7 @@ public class PlayerControllerMulti : NetworkBehaviour
 
     void Awake()
     {
+        controller = GetComponent<NetworkCharacterControllerPrototype>();
         playerManager = gameObject.GetComponent<PlayerManagerMulty>();
         catAnim = gameObject.GetComponentInChildren<Animator>();
         playerCamera = Camera.main;

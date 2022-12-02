@@ -12,8 +12,17 @@ public class StartNetworkGame : MonoBehaviour, INetworkRunnerCallbacks
     [SerializeField] private NetworkRunner _networkRunner;
     [SerializeField] private string _roomName;
     [SerializeField] private string _sceneName;
-    [SerializeField] private UnityEvent<NetworkRunner, PlayerRef> OnPlayerJoinedEvent;
+    //[SerializeField] private UnityEvent<NetworkRunner, PlayerRef> OnPlayerJoinedEvent;
+    //[SerializeField] private UnityEvent<NetworkRunner, PlayerRef> OnPlayerLeftEvent;
     [SerializeField] private StartGameSettings _playerSpawnSettings;
+
+    [SerializeField] private GameObject _playerPrefab;
+
+    //[SerializeField] private List<NetworkObject> _networkedObjects;
+    public Dictionary<PlayerRef, NetworkObject> _spawnedObjects = new Dictionary<PlayerRef, NetworkObject>();
+
+
+    [SerializeField] StartGameSettings _startGameSettings;
 
     private void Awake()
     {
@@ -46,30 +55,33 @@ public class StartNetworkGame : MonoBehaviour, INetworkRunnerCallbacks
 
     public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
     {
-        /*
         if (runner.IsServer)
         {
-            Debug.Log("Connected as Host");
-            OnPlayerJoinedEvent?.Invoke(runner, player);
+            Debug.Log("Player Spawned");
+
+            NetworkObject _object = runner.Spawn(_playerPrefab, _startGameSettings.spawnPosition, Quaternion.identity, player);
+            _spawnedObjects.Add(player, _object);
+            Debug.Log($" {_spawnedObjects.Count} objects in simulation. ");
         }
         else
         {
-            Debug.Log("Connected as Client");
-            OnPlayerJoinedEvent?.Invoke(runner, player);
+            Debug.Log("Connected as Client"); 
         }
-        */
-
-        OnPlayerJoinedEvent?.Invoke(runner, player);
     }
 
     public void OnPlayerLeft(NetworkRunner runner, PlayerRef player)
     {
+        if (_spawnedObjects.TryGetValue(player, out NetworkObject networkObject))
+        {
+            Debug.Log("Player Despawned");
 
+            runner.Despawn(networkObject);
+            _spawnedObjects.Remove(player);
+        }
     }
 
     public void OnInput(NetworkRunner runner, NetworkInput input)
     {
-
     }
 
     public void OnInputMissing(NetworkRunner runner, PlayerRef player, NetworkInput input)
