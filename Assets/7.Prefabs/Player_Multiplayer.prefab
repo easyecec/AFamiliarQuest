@@ -219,6 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1d1f700705c4764b8f1043d8845fb0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _interpolationDataSource: 0
   controller: {fileID: 7452744055403281220}
   speed: 8
   jumpForce: 10
@@ -337,5 +338,6 @@ MonoBehaviour:
   NetworkGuid:
     RawGuidValue: a4fd1b1ee028c0c49af9c7d86ae57125
   NestedObjects: []
-  NetworkedBehaviours: []
+  NetworkedBehaviours:
+  - {fileID: 2049323662416123693}
   SimulationBehaviours: []
