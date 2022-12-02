@@ -82,6 +82,26 @@ public class StartNetworkGame : MonoBehaviour, INetworkRunnerCallbacks
 
     public void OnInput(NetworkRunner runner, NetworkInput input)
     {
+        NetworkInputData data = new NetworkInputData();
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            data.Direction.z += Input.GetAxis("Horizontal");
+        }
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            data.Direction.z += Input.GetAxis("Horizontal");
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            data.Direction.z += Input.GetAxis("Horizontal");
+        }
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            data.Direction.z += Input.GetAxis("Horizontal");
+        }
+
+        input.Set(data);
     }
 
     public void OnInputMissing(NetworkRunner runner, PlayerRef player, NetworkInput input)

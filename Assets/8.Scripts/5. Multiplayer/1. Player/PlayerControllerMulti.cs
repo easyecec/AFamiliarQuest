@@ -9,9 +9,10 @@ public class PlayerControllerMulti : NetworkBehaviour
 
     // Player values
     [SerializeField] private NetworkCharacterControllerPrototype controller;
-    [SerializeField] private float speed = 8;
+    [SerializeField] private float speed = -10;
     [SerializeField] private float jumpForce = 10;
     [SerializeField] private float gravity = -20;
+    [SerializeField] private GameObject catSprite;
 
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
@@ -29,12 +30,13 @@ public class PlayerControllerMulti : NetworkBehaviour
     //Camera values
     Camera playerCamera;
     [SerializeField] private float followSpeed = 2.5f;
-    [SerializeField] private float yOffset = 0f;
-    [SerializeField] private float xOffset = 1f;
-    [SerializeField] private float zOffset = -14f;
+    [SerializeField] private float yOffset = 1f;
+    [SerializeField] private float xOffset = -14f;
+    [SerializeField] private float zOffset = 0.7f;
 
     void Awake()
     {
+        catSprite.transform.rotation = Quaternion.Euler(0f, 90f, 0f);
         controller = GetComponent<NetworkCharacterControllerPrototype>();
         playerManager = gameObject.GetComponent<PlayerManagerMulty>();
         catAnim = gameObject.GetComponentInChildren<Animator>();
@@ -45,8 +47,8 @@ public class PlayerControllerMulti : NetworkBehaviour
     {
         if (!playerManager.PlayerDead)
         {
-            MovePlayer();
-            Jump();
+            //MovePlayer();
+            //Jump();
             CameraMovement();
         }
 
@@ -56,8 +58,34 @@ public class PlayerControllerMulti : NetworkBehaviour
         }
     }
 
+    public override void FixedUpdateNetwork()
+    {
+        if(GetInput(out NetworkInputData data))
+        {
+            direction.z = data.Direction.z * speed;
+
+            controller.Move(direction * Time.deltaTime * 50);
+
+            if (data.Direction.z < 0)
+            {
+                catSprite.transform.rotation = Quaternion.Euler(0f, -90f, 0f);
+                catAnim.SetBool("Walking", true);
+            }
+            else if (data.Direction.z > 0)
+            {
+                catSprite.transform.rotation = Quaternion.Euler(0f, 90f, 0f);
+                catAnim.SetBool("Walking", true);
+            }
+            else
+            {
+                catAnim.SetBool("Walking", false);
+            }
+        }
+    }
+
     void MovePlayer()
     {
+        /*
         float hInput = Input.GetAxis("Horizontal");
         direction.x = hInput * speed;
 
@@ -77,6 +105,7 @@ public class PlayerControllerMulti : NetworkBehaviour
         {
             catAnim.SetBool("Walking", false);
         }
+        */
     }
 
     void Jump()
