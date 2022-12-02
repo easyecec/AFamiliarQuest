@@ -20,6 +20,7 @@ public class CoinDisplayMulti : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         foreach(var player in spawnController._spawnedObjects)
         {
             for (int i = 0; i < spawnController._spawnedObjects.Count; i++)
@@ -29,5 +30,6 @@ public class CoinDisplayMulti : MonoBehaviour
             }
             //player.Value.gameObject;
         }
+        */
     }
 }
