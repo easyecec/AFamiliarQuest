@@ -19,6 +19,7 @@ public class StartNetworkGame : MonoBehaviour, INetworkRunnerCallbacks
     {
         StartNewGame();
     }
+
     async void StartNewGame()
     {
         await _networkRunner.StartGame(new StartGameArgs()

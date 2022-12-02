@@ -1,9 +1,10 @@
+using Fusion;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
-public class PlayerControllerMulti : MonoBehaviour
+public class PlayerControllerMulti : NetworkBehaviour
 {
 
     // Player values
