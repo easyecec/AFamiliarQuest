@@ -136,7 +136,7 @@ public class PlayerControllerMulti : NetworkBehaviour
 
     void CameraMovement()
     {
-        Vector3 newPos = new Vector3(transform.position.x + xOffset, transform.position.y + yOffset, zOffset);
+        Vector3 newPos = new Vector3(xOffset, this.transform.position.y + yOffset, this.transform.position.z + zOffset);
         playerCamera.transform.position = Vector3.Slerp(playerCamera.transform.position, newPos, followSpeed * Time.deltaTime);
     }
 
